@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="css/lightbox.min.css">
+<link rel="stylesheet" href="../css/contacto.css">
+<link rel="stylesheet" href="js/app.js">
+
+<section style="margin-top: 50px;">
+    <div class="contacto-container">
+        <div class="form">
+            <div class="contact-info">
+                <h3 class="title">Contactanos</h3>
+                <p class="text">
+                    Horario de oficinas: 8:00 a.m a 4:00 p.m lunes a viernes
+                </p>
+                <div class="info">
+                    <div class="information">
+                        <img src="~/icons/ubicacion.png" class="icon">
+                        <p>
+                            Priv. Roberto Dávila 357 Nte.
+                            Col. Reynera C.P. 26730
+                            Sabinas, Coahuila.
+                            <br>RFC: SMA100101U20</br>
+                        </p>
+                    </div>
+                    <div class="information">
+                        <img src="~/icons/correo.png" class="icon">
+                        <p>
+                            simas_sabinas@hotmail.com
+                            <br>atencion_usuarios@simassabinas.com.mx</br>
+                        </p>
+                    </div>
+                    <div class="information">
+                        <img src="~/icons/telefono.png" class="icon">
+                        <p>
+                            (861) 612 2014
+                            <br>(861) 612 6327</br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="index.html">
+                    <h3 class="title">Su opinión es importante</h3>
+                    <p>Trabajamos día a día para brindarle un mejor servicio</p>
+                    <div class="input-container">
+                        <input type="text" name="name" class="input">
+                        <label for="">Nombre</label>
+                        <span>Nombre</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="email" class="input">
+                        <label for="">Correo eletrónico</label>
+                        <span>Correo eletrónico</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" name="phone" class="input">
+                        <label for="">Teléfono</label>
+                        <span>Teléfono</span>
+                    </div>
+                    <div class="input-container textarea">
+                        <textarea name="message" class="input" cols="30" rows="4"></textarea>
+                        <label for="">Mensaje</label>
+                        <span>Mensaje</span>
+                    </div>
+                    <button class="enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="js/lightbox-plus-jquery.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/contacto.js"></script>

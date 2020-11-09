@@ -1,0 +1,159 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://kit.fontawesome.com/c1a10add69.js" crossorigin="anonymous"></script>
+    <link rel="stylsheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>SIMAS Sabinas</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar  navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="~/Index"><img src="~/img/Logosimas2.jpg" class="logo-brand" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" id="inicio" href="~/Index">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nosotros</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="Historia" href="~/Historia">Historia</a>
+                                <a class="dropdown-item" id="VisionMision" href="~/Nosotros">Visión, Misión</a>
+                                <a class="dropdown-item" id="Contacto" href="~/Contacto">Contacto</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tramites y servicios
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="contratos" href="~/Contratos">Contratos</a>
+                                <a class="dropdown-item" id="facturacion" href="~/FacturacionElectronica">Facturación electrónica</a>
+                                <a class="dropdown-item" id="beneficiopensionado" href="~/Pensionado">Beneficio del pensionado</a>
+                                <a class="dropdown-item" id="centrosyformaspago" href="~/CentrosPago">Centros y formas de pago</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tarifas" href="~/Tarifas">Tarifas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cultura del agua
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="cultura" href="~/CulturaAgua">¿Qué es?</a>
+                                <a class="dropdown-item" id="programas" href="~/ProgramasActividades">Programas y actividades</a>
+                                <a class="dropdown-item" id="cuidaelagua" href="~/CuidaAgua">Cuida el agua</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Transparencia
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" id="transparencia" href="~/Transparencia">Transparencia</a>
+                                <a class="dropdown-item" id="transparenciaLGCG" href="~/TransparenciaLGCG">Transparencia LGCG</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        @RenderBody()
+
+
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>Acerca de SIMAS</h6>
+                    <p class="text-justify">Somos una empresa con la tarea de garantizar a la población del municipio de Sabinas el suministro de los servicios de agua potable, alcantarillado y saneamiento</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Ir a</h6>
+                    <ul class="footer-links">
+                        <li><a href="~/Nosotros">Nosotros</a></li>
+                        <li><a href="~/Contacto">Contacto</a></li>
+                        <li><a href="~/Noticias">Noticias</a></li>
+                        <li><a href="~/Tarifas">Tarifas</a></li>
+                        <li><a href="~/Galeria">Galeria</a></li>
+                        <li><a href="~/Transparencia">Transparencia</a></li>
+                        <li><a href="~/TransparenciaLGCG">Transparencia LGCG</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Servicios</h6>
+                    <ul class="footer-links">
+                        <li><a href="~/Contratos">Contratos</a></li>
+                        <li><a href="~/FacturacionElectronica">Facturación electrónica</a></li>
+                        <li><a href="~/Pensionado">Beneficio del pensionado</a></li>
+                        <li><a href="~/CentrosPago">Centros y formas de pago</a></li>
+                        <li><a href="~/ReportarFuga">Reportar una fuga</a></li>
+                        <li><a href="~/PreguntasFrecuentes">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">
+                        Derechos Reservados SIMAS Sabinas 2020
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c1a10add69.js" crossorigin="anonymous"></script>
+</body>
+</html>

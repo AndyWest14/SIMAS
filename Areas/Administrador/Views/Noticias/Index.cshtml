@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SIMAS.Models.Noticias>
+@{
+    Layout = "~/Areas/Administrador/views/Shared/_LayoutAdmin.cshtml";
+}
+<link rel="stylesheet" href="../css/adminnoticias.css">
+
+
+<div class="card mb-3" style="margin-top: 10%; padding: 0px;">
+    <div class="card-header">
+
+        <h3>Lista noticias</h3>
+        <a href="~/Administrador/AgregarNoticia"> <i class="fas fa-plus"></i> <span>Añadir una noticia</span></a>
+    </div>
+    <div class="card-body">
+        <table id="example" class="table display row-border cell-border table-striped" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Encabezado</th>
+                        <th>@item.DescripcionCorta</th>
+                        <th>@item.Fecha</th>
+                        <th>
+                           <a href="#" target="_blank" class="a-edit">
+                            <i class="fas fa-eye"></i>
+                           </a>
+                            <a href="~/Administrador/EditarNoticia/@item.IdNoticias" class="a-edit">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="javascript:eliminar(@item.IdNoticias)" class="a-delete">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </th>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+        <form method="post" action="~/Administrador/Noticia/EliminarNoticia">
+            <input name="id" id="idNot" type="hidden" />
+        </form>
+
+        <script>
+            function eliminar(idNot) {
+                document.getElementById("idNot").value = idNot;
+                if (confirm('¿Desea eliminar esta noticia?')) {
+                    document.forms[0].submit()
+                };
+            }
+        </script>
+    </div>
+</div>

@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --dark-color: #1a1a1a;
+    --white-color: #ffffff;
+    --light-grey-color: #f5f5f5;
+    --gold-color: #ffb944;
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+section { padding: 120px 0; }
+h1 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 60px; font-weight: 600; line-height: 100px;}
+h2 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 48px; margin-bottom: 30px; }
+h3 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 33px; }
+h5 { margin-bottom: 0px; }
+p{ font-size: 18px; color: #555555; line-height: 1.8; margin-bottom: 0;}
+
+.topmargin-xs{ margin-top: 15px;}
+.topmargin-sm{ margin-top: 30px;}
+.topmargin-lg{ margin-top: 60px;}
+
+
+/* ///NAVBAR/// */
+.navbar{ background: white !important; min-height: 70px; }
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link { color: #4392f1;}
+.dropdown-menu{ border-radius: 2px; border: none; color: #7f7f7f !important;}
+.dropdown-item{ color: #7f7f7f !important;}
+.nav-item { border-right: none; padding-right: 20px; color: #7f7f7f !important;}  
+.logo-brand{ min-width: 100px; max-width: 130px; margin-right: 40px;}
+.navbar-toggler:focus{ outline: none}
+.navbar .navbar-collapse { margin-top: 10px; text-align: center; }
+.nav-item .dropdown-item .dropdown-menu .navbar-collapse { text-align: center;}
+.dropdown-menu { text-align: center;}
+
+/* ///MAIN/// */
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 1px;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -10px;}
+
+.titulo-2{ color: #57555b; font-size: 25px; margin-top: 5px;}
+.subtitulo{ color: #57555b; margin-top:5%; margin-bottom: 2%; font-size: 25px;}
+
+.primer-texto{ margin-top: -5%; margin-left: 12%; margin-right: 12%;}
+.segundo-texto{ margin-top: -20%; margin-left: 12%; margin-right: 12%;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px; margin-bottom: 10px;}
+.segundo-texto li{ margin-left: 25px;  margin-top: 15px; text-align: justify; margin-bottom: 5px; color: #555555; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  font-size: 18px;  list-style-position: outside;}
+.segundo-texto ul { margin-top: 3%; margin-bottom: 3%;}
+
+/*//////////////////////////////////////////////////////////////////
+[ Tablas ]*/
+
+.tablas{ display:flex;  flex-direction: column; padding: 0px;  margin-top: 5%; margin-bottom: 15%; align-items: center;}
+.tablas > div{ width: 90%; align-items: center;}
+.tablas h2{ text-align: center !important;left: 40%; right: 40%; margin-top: -10%;}
+table{ position: relative; border-collapse:separate; overflow: hidden; width: 600px; height: 150px; border-radius:10px; -moz-border-radius:6px; border-spacing: 0; box-shadow: 2px 2px 12px rgba(0, 0, 0,0.2), -1px -1px 8px rgba(0,0,0,0.2);  margin-left: auto; margin-right: auto; margin-top: -5%;}
+tr{ transition: all .2s ease-in; cursor: pointer;}
+tr:hover{ background-color: lightgray; transform: scale(1.02);}
+th, td { padding: 12px; text-align: center;} 
+#header { background-color: #4392f1; border-bottom: none; border-radius: 30px !important;color: #ffff; box-shadow: 2px 2px 12px rgba(0, 0, 0,0.2), -1px -1px 8px rgba(0,0,0,0.2); }
+.tablas p{ text-align: center; margin-top: 2%; margin-left: 12%; margin-right: 12%;}
+
+
+/* RESPONSIVO */
+
+@media (max-width:320px)
+{
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+
+.primer-texto{ margin-top: -55%;}
+.primer-texto p{ font-size: 14px;  line-break: normal;}
+
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 14px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 14px; margin-right: 10px; margin-bottom: 5px;}
+
+.text{ margin-bottom: -20%;}
+
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:14px; margin-left: 2%; margin-right:2%;}
+
+.texto-abajo{ margin-top:-45%;}
+}
+
+@media (min-width:321px) and (max-width:480px)
+{
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -40%;}
+.primer-texto p{ font-size: 16px;  line-break: normal;}
+
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 16px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 16px; margin-right: 10px; margin-bottom: 5px;}
+.segundo-texto ul{ margin-top: 10%; margin-bottom: 18% !important;}
+
+.text{ margin-bottom: -20%;}
+
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:16px; margin-left: 3%; margin-right: 3%;}
+
+.texto-abajo{ margin-top:-40%;}
+}
+
+@media only screen and (min-width : 480px) and (max-width : 595px)
+{
+/*--- Mobile landscape ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+
+.primer-texto{ margin-top: -30%;}
+.primer-texto p{ font-size: 16px;  line-break: normal;}
+
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 16px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 16px; margin-right: 10px; margin-bottom: 5px;}
+.segundo-texto ul{ margin-top: 10%; margin-bottom: 15% !important;}
+
+.text{ margin-bottom: -20%;}
+
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:16px; margin-left: 3%; margin-right: 3%;}
+
+.texto-abajo{ margin-top:-30%;}
+}
+
+@media only screen and (min-width : 595px) and (max-width : 690px) 
+{
+/*--- Small tablet portrait ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -30%;}
+.primer-texto p{ font-size: 16px;  line-break: normal;}
+
+.text{ margin-bottom: -20%;}
+
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:16px; margin-left: 3%; margin-right: 3%;}
+
+.texto-abajo{ margin-top:-30%;}
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 16px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 16px; margin-right: 10px; margin-bottom: 5px;}
+.segundo-texto ul{ margin-top: 10%; margin-bottom: 10% !important;}
+}
+
+@media only screen and (min-width : 690px) and (max-width : 800px) 
+{
+/*--- Tablet portrait ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -20%;}
+.primer-texto p{ font-size: 16px;  line-break: normal;}
+
+.text{ margin-bottom: -10%;}
+
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:16px; margin-left: 3%; margin-right: 3%;}
+
+.texto-abajo{ margin-top:-30%;}
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 16px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 16px; margin-right: 10px; margin-bottom: 5px;}
+.segundo-texto ul{ margin-top: 10%; margin-bottom: 10% !important;}
+}
+
+@media (min-width:800px) and (max-width:1024px)
+{
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+        
+.primer-texto{ margin-top: -15%;}
+.primer-texto p{ font-size: 16px;  line-break: normal;}
+    
+.text{ margin-bottom: -5%;}
+    
+table{ width: 90%; height: 80px; margin-top: 1%; margin-bottom: 1%;}
+.tablas > div{ width: 90%; height: 600px; align-items: center;}
+.tablas .nombre { height: 50px !important; margin-bottom: 2%;}
+.tablas h2{ margin-top:5px; font-size:18px;}
+.tablas .pie-tabla { height: 100px !important;}
+.tablas p{ font-size:16px; margin-left: 3%; margin-right: 3%;}
+    
+.texto-abajo{ margin-top:-30%;}
+.segundo-texto{ margin-top: 2%;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 16px; line-break: normal; margin-bottom: 3%; text-align: normal;}
+.segundo-texto li{ font-size: 16px; margin-right: 10px; margin-bottom: 5px;}
+.segundo-texto ul{ margin-top: 10%; margin-bottom: 10% !important;}
+}
+
+@media (min-width:1025px) and (max-width:1200px)
+{
+
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 2%;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -40px;}
+    
+.primer-texto{ margin-top: -10%;}
+}
+
+@media (min-width:1201px) and (max-width:1440px)
+{
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 2%;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -40px;}
+ 
+.primer-texto{ margin-top: -6%;}
+}
+

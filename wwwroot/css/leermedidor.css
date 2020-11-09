@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --dark-color: #1a1a1a;
+    --white-color: #ffffff;
+    --light-grey-color: #f5f5f5;
+    --gold-color: #ffb944;
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+section { padding: 120px 0; }
+h1 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 60px; font-weight: 600; line-height: 100px;}
+h2 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 48px; margin-bottom: 30px; }
+h3 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 33px; }
+h5 { margin-bottom: 0px; }
+p{ font-size: 18px; color: #555555; line-height: 1.8; margin-bottom: 0;}
+
+.topmargin-xs{ margin-top: 15px;}
+.topmargin-sm{ margin-top: 30px;}
+.topmargin-lg{ margin-top: 60px;}
+
+
+/* ///NAVBAR/// */
+.navbar{ background: white !important; min-height: 70px; }
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link { color: #4392f1;}
+.dropdown-menu{ border-radius: 2px; border: none; color: #7f7f7f !important;}
+.dropdown-item{ color: #7f7f7f !important;}
+.nav-item { border-right: none; padding-right: 20px; color: #7f7f7f !important;}  
+.logo-brand{ min-width: 100px; max-width: 130px; margin-right: 40px;}
+.navbar-toggler:focus{ outline: none}
+.navbar .navbar-collapse { margin-top: 10px; text-align: center; }
+.nav-item .dropdown-item .dropdown-menu .navbar-collapse { text-align: center;}
+.dropdown-menu { text-align: center;}
+
+/* ///MAIN/// */
+
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 1px;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -10px;}
+
+.titulo-2{ color: #57555b; font-size: 25px; margin-top: 5px;}
+.subtitulo{ color: #57555b; margin-top:5%; margin-bottom: 2%; font-size: 25px;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px;}
+section ul{ margin-left: 25px;  margin-top: 20px;  margin-bottom: 40px; color: #555555;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;  list-style-position: outside;}
+
+.primer-texto{ margin-top: -3%; margin-left: 12%; margin-right: 12%;}
+.segundo-texto{ margin-top: 20px; margin-left: 12%; margin-right: 12%;}
+
+.texto-izquierda{ text-align: left; font-size: 18px;}
+.texto-izquierda h5{ color: #4392f1; margin-top: 3%; font-size: 18px;}
+.texto-izquierda p{ font-size: 18px;}
+
+.img-derecha{ float: right; margin-left: 30px; margin-right: 35px;   margin-top: 1%; width: 40%; height: 300px; }
+.img-derecha img{ display: block; margin-left: auto; margin-right: auto; height: 100%;}
+
+/* RESPONSIVO */
+
+@media (max-width:320px)
+{
+
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #555555; margin-top: 10px;}
+
+.primer-texto{ margin-top: -50%;}
+.titulo-2 { font-size: 16px;}
+.primer-texto p{ font-size: 14px; line-break: normal;}
+.primer-texto ul{ font-size:14px; text-align: justify; }
+.primer-texto .lista-dos li{ margin-right: 10px; margin-bottom: 15px;}
+
+.segundo-texto{ margin-top:10px;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 14px; line-break: normal; margin-bottom: 3%;}
+
+.texto-izquierda{ display: flex; flex-direction: column;}
+.img-derecha {width: 90%; height: 60%; margin-left: auto; margin-right: auto; margin-bottom: 10%;}
+.img-derecha img{ float: inline-start; width: 100%; height: 100%;}
+
+.texto-izquierda h5{ font-size: 16px; margin-top: 15%;}
+.texto-izquierda p{ font-size: 14px; line-break: normal; margin-bottom: 5%;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ margin-bottom: 10px;}
+}
+
+@media (min-width:321px) and (max-width:480px)
+{
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -40%;}
+.titulo-2 { font-size: 16px;}
+.primer-texto p{ font-size: 14px; line-break: normal;}
+.primer-texto ul{ font-size:14px; text-align: justify; }
+.primer-texto .lista-dos li{ margin-right: 10px; margin-bottom: 15px;}
+    
+.segundo-texto{ margin-top:10px;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 14px; line-break: normal; margin-bottom: 3%;}
+    
+.texto-izquierda{ display: flex; flex-direction: column;}
+.img-derecha {width: 90%; height: 60%; margin-left: auto; margin-right: auto; margin-bottom: 10%;}
+.img-derecha img{ float: inline-start; width: 100%; height: 100%;}
+    
+.texto-izquierda h5{ font-size: 16px; margin-top: 15%;}
+.texto-izquierda p{ font-size: 14px; line-break: normal; margin-bottom: 5%;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ margin-bottom: 10px;}
+
+}
+
+@media only screen and (min-width : 480px) and (max-width : 595px)
+{
+/*--- Mobile landscape ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -30%;}
+.titulo-2 { font-size: 16px;}
+.primer-texto p{ font-size: 14px; line-break: normal;}
+.primer-texto ul{ font-size:14px; text-align: justify; }
+.primer-texto .lista-dos li{ margin-right: 10px; margin-bottom: 15px;}
+    
+.segundo-texto{ margin-top:10px;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 14px; line-break: normal; margin-bottom: 3%;}
+    
+.texto-izquierda{ display: flex; flex-direction: column;}
+.img-derecha {width: 70%; height: 40%; margin-left: auto; margin-right: auto; margin-bottom: 5%;}
+.img-derecha img{ float: inline-start; width: 100%; height: 100%;}
+    
+.texto-izquierda h5{ font-size: 16px; margin-top: 5%;}
+.texto-izquierda p{ font-size: 14px; line-break: normal; margin-bottom: 5%;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ margin-bottom: 10px;}
+
+}
+
+@media only screen and (min-width : 595px) and (max-width : 690px) 
+{
+/*--- Small tablet portrait ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -25%;}
+.titulo-2 { font-size: 16px;}
+.primer-texto p{ font-size: 14px; line-break: normal;}
+.primer-texto ul{ font-size:14px; text-align: justify; }
+.primer-texto .lista-dos li{ margin-right: 10px; margin-bottom: 15px;}
+    
+.segundo-texto{ margin-top:10px;}
+.subtitulo {font-size: 16px; margin-bottom: 10px;}
+.segundo-texto p{ font-size: 14px; line-break: normal; margin-bottom: 3%;}
+    
+.texto-izquierda{ display: flex; flex-direction: column;}
+.img-derecha {width: 70%; height: 40%; margin-left: auto; margin-right: auto; margin-bottom: 5%;}
+.img-derecha img{ float: inline-start; width: 100%; height: 100%;}
+    
+.texto-izquierda h5{ font-size: 16px; margin-top: 5%;}
+.texto-izquierda p{ font-size: 14px; line-break: normal; margin-bottom: 5%;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ margin-bottom: 10px;}
+
+}
+
+@media only screen and (min-width : 690px) and (max-width : 800px) 
+{
+/*--- Tablet portrait ---*/
+
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+.primer-texto{ margin-top: -20%; margin-left: 10%; margin-right: 10%;}
+.titulo-2{ color: #57555b; font-size: 20px; margin-top: 5px;}
+.primer-texto ul{ font-size:18px; text-align: justify; }
+.primer-texto .lista-dos li{ font-size: 18px; margin-right: 10px; margin-bottom: 15px;}
+
+.segundo-texto{ margin-top: 20px; margin-left: 10%; margin-right: 10%;}
+.subtitulo{ color: #57555b; margin-top:5%; margin-bottom: 2%; font-size: 20px;}
+.segundo-texto p{ text-align: justify; font-size: 18px; margin-top: 10px;}
+
+.texto-izquierda{ text-align: left; font-size: 18px;}
+.texto-izquierda h5{ color: #4392f1; margin-top: 5%; font-size: 18px;}
+.texto-izquierda p{ font-size: 18px;  text-align: justify;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ font-size: 18px; margin-bottom: 10px;}
+
+.img-derecha{ float: right; margin-left: 30px; margin-right: 10px;  margin-top: -5%; width: 40%; height: 40%; }
+.img-derecha img{ display: block; margin-left: auto; margin-right: auto; height: 100%;}
+}
+
+@media (min-width:800px) and (max-width:1024px)
+{
+section ul{ margin-left: 25px;  margin-top: 20px;  margin-bottom: 40px; color: #555555; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px; text-align: justify; list-style-position: outside;}
+.texto-izquierda{ text-align: left; font-size: 18px;}
+.texto-izquierda h5{ color: #4392f1; margin-top: 5%; font-size: 18px;}
+.texto-izquierda p{ font-size: 18px; margin-right: 0;  text-align: justify; }
+.texto-izquierda .texto-largo{ width: 77%;}
+
+.primer-texto{ margin-top: -10%; margin-left: 10%; margin-right: 10%;}
+.texto-izquierda ul{ margin-right: 10px;  font-size: 14px; text-align: justify;}
+.texto-izquierda li{ font-size: 18px; margin-bottom: 10px;}
+.img-derecha{ float: right; margin-left: 2%; margin-right: 0px; margin-top: 3%; width: 45%; height: 45%; }
+.img-derecha img{ display: block; padding: 0px; margin-left: auto; margin-right: auto; width: 100%; height: auto;}
+}
+
+@media (min-width:1025px) and (max-width:1200px)
+{
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 2%;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -40px;}
+    
+.titulo-2{ color: #57555b; font-size: 25px; margin-top: 5px;}
+.subtitulo{ color: #57555b; margin-top:5%; margin-bottom: 2%; font-size: 25px;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px;}
+section ul{ margin-left: 25px;  margin-top: 20px;  margin-bottom: 40px; color: #555555;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;  list-style-position: outside;}
+    
+.primer-texto{ margin-top: -3%; margin-left: 10%; margin-right: 10%;}
+.segundo-texto{ margin-top: 20px; margin-left: 10%; margin-right: 10%;}
+    
+.texto-izquierda{ text-align: left; font-size: 18px;}
+.texto-izquierda h5{ color: #4392f1; margin-top: 3%; font-size: 18px;}
+.texto-izquierda p{ font-size: 18px;}
+.texto-izquierda .texto-largo{ width: 77%;}
+    
+.img-derecha{ float: right; margin-left: 30px; margin-right: 35px;  margin-top: 1%; width: 40%; height: 300px; }
+.img-derecha img{ display: block; margin-left: auto; margin-right: auto; height: 100%;}
+
+}
+
+@media (min-width:1201px) and (max-width:1440px)
+{
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 2%;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -40px;}
+        
+.titulo-2{ color: #57555b; font-size: 25px; margin-top: 5px;}
+.subtitulo{ color: #57555b; margin-top:5%; margin-bottom: 2%; font-size: 25px;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px;}
+section ul{ margin-left: 25px;  margin-top: 20px;  margin-bottom: 40px; color: #555555;  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;  list-style-position: outside;}
+        
+.primer-texto{ margin-top: -3%; margin-left: 10%; margin-right: 10%;}
+.segundo-texto{ margin-top: 20px; margin-left: 10%; margin-right: 10%;}
+        
+.texto-izquierda{ text-align: left; font-size: 18px;}
+.texto-izquierda h5{ color: #4392f1; margin-top: 3%; font-size: 18px;}
+.texto-izquierda p{ font-size: 18px;}
+.texto-izquierda .texto-largo{ width: 70%;}
+
+.img-derecha{ float: right; margin-left: 20px; margin-right: 35px;  margin-top: 1%; width: 35%; height: 35%; }
+.img-derecha img{ display: block; margin-left: auto; margin-right: auto; width: 100%; height: 100%;}
+
+}
+

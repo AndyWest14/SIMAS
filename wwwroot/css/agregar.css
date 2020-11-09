@@ -1,0 +1,317 @@
+:root{
+    --header-height:3rem;
+    --nav-width: 68px;
+  
+    --first-color: #4392F1 ;
+    --first-color-light: #FAFAFAFA;
+    --white-color: #F7F6FB;
+  
+    --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --normal-font-size: 1rem;
+  
+    --z-fixed:100;
+    
+  }
+  
+  /*===== BASE =====*/
+  *,::before,::after{
+    box-sizing: border-box;
+  }
+  
+  body{
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  /*===== HEADER =====*/
+  .header{
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--white-color);
+    z-index: var(--z-fixed);
+    transition: .5s;
+  }
+  
+  .header__toggle{
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .header__img{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .header__img img{
+    width: 40px;
+  }
+  
+  /*===== NAV =====*/
+  .l-navbar{
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--first-color);
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed);
+  }
+  
+  .nav{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  
+  .nav__logo, .nav__link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem;
+  }
+  
+  .nav__logo{
+    margin-bottom: 2rem;
+  }
+  
+  .nav__logo-icon{
+    font-size: 1.25rem;
+    color: var(--white-color);
+  }
+  
+  .nav__logo-name{
+    color: var(--white-color);
+    font-weight: 700;
+  }
+  
+  .nav__link{
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s;
+  }
+  
+  .nav__link:hover{
+    color: var(--white-color);
+  }
+  
+  .nav__icon{
+    font-size: 1.25rem;
+  }
+  
+  /*Show navbar movil*/
+  .show{
+    left: 0;
+  }
+  
+  /*Add padding body movil*/
+  .body-pd{
+    padding-left: calc(var(--nav-width) + 1rem);
+  }
+  
+  /*Active links*/
+  .active{
+    color: var(--white-color);
+  }
+  
+  .active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color);
+  }
+  
+  
+  
+  
+  /*MAIN*/
+  
+  main{padding: 5px;}
+  th{font-style: normal; font-weight: 200; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+  
+  a{text-decoration: none;}
+  .a-edit, .a-delete{margin-bottom: 5px; display: inline-block;}
+  
+  .card{ border:none !important;}
+  .card-header{ background-color: white !important; border-bottom: white !important;} 
+
+  h3{ color: #555555 !important;}
+
+ #placeholder{ color: lightgray;}
+
+ 
+  
+  
+  /* ===== MEDIA QUERIES SIDEBAR=====*/
+  @media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+  
+  .header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+  
+  .header__img{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header__img img{
+    width: 45px;
+  }
+  
+  .l-navbar{
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  
+  /*Show navbar desktop*/
+  .show{
+    width: calc(var(--nav-width) + 156px);
+  }
+  
+  /*Add padding body desktop*/
+  .body-pd{
+    padding-left: calc(var(--nav-width) + 188px);
+  } 
+  }
+  
+  /* RESPONSIVO MAIN */
+  
+  @media (max-width:320px)
+  {
+  
+  h3{ font-size: 16px; margin-top: 10% !important;}
+  table{ font-size: 16px !important; line-height: 25px; flex-wrap: wrap !important; line-break: normal !important;}
+  #example_info{ font-size: 10px!important; line-height: 20px; line-break: normal; flex-wrap: wrap !important; margin-top: 5%; margin-bottom: 5%;}
+  .pagination{ font-size: 14px !important; }
+  table label{ font-size: 14px !important;}
+
+  .card{ margin-top: 10%;}
+  .input-group{ margin-bottom: 12% !important; font-size: 14px;}
+  .form-control{ font-size: 14px !important;}
+  .btn{ margin-top: 5%;}
+
+  .l-navbar{
+    height: 100%;
+  }
+
+  }
+  
+  @media (min-width:321px) and (max-width:480px)
+  {
+  
+  #card-admin{margin: 0px;}
+  form{margin: 0;}
+  
+  h3{ font-size: 16px; margin-top: 10% !important;}
+  table{ font-size: 16px !important; line-height: 25px; flex-wrap: wrap !important; line-break: normal !important;}
+  #example_info{ font-size: 12px!important; line-height: 20px; line-break: normal; flex-wrap: wrap !important; margin-top: 5%; margin-bottom: 5%;}
+  .pagination{ font-size: 14px !important; }
+  
+  table label{ font-size: 14px !important;}
+  .card{ margin-top: 15% !important;}
+  .input-group{ margin-bottom: 12% !important; font-size: 14px;}
+
+  .btn{ margin-top: 5%;}
+  .l-navbar{
+    height: 100%;
+  }
+
+  }
+  
+  @media only screen and (min-width : 480px) and (max-width : 595px)
+  {
+  
+  #example_info{ margin-top: 5%; margin-bottom: 5%;}
+  .card{ margin-top: 15% !important;}
+  .btn{ margin-top: 5%;}
+  .l-navbar{
+    height: 100%;
+  }
+
+  }
+  
+  @media only screen and (min-width : 595px) and (max-width : 690px) 
+  {
+  /*--- Small tablet portrait ---*/
+  #example_info{ margin-top: 5%; margin-bottom: 5%;}
+  .btn{ margin-top: 5%;}
+  .l-navbar{
+    height: 100%;
+  }
+
+  }
+  
+  @media only screen and (min-width : 690px) and (max-width : 800px) 
+  {
+  /*--- Tablet portrait ---*/
+  
+  #card-admin{margin: 20px;}
+  form{margin-left: 4%; margin-right: 4%; margin-top: 1%;}
+  #example_info{ margin-top: 5%; margin-bottom: 5%;}
+  .card{ margin-top: 15% !important;}
+  h3 { margin-left: 3%;}
+  .btn{ margin-top: 5%;}
+  .l-navbar{
+    height: 100%;
+  }
+
+  }
+  
+  @media (min-width:800px) and (max-width:1024px)
+  {
+  
+  #card-admin{margin: 50px;}
+  form{margin-left: 10%; margin-right: 10%; margin-top: 3%;}
+  .card{ margin-top: 15% !important;}
+
+  h3 { margin-left: 10% !important;}
+  .btn{ margin-top: 5%;}
+
+  
+  }
+  
+  @media (min-width:1025px) and (max-width:1200px)
+  {
+  
+  
+  }
+  
+  @media (min-width:1201px) and (max-width:1440px)
+  {
+  
+  
+  }
+  
+  

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_LayoutAccount";
+}
+
+<div class="login">
+    <h1>Acceso denegado</h1>
+    <hr>
+    @*<p>Inicie sesión para administrar los contenidos</p>*@
+
+    <form action="~/Home/Index" method="get" class="form">
+        @*<div class="group">
+                <input type="text" name="user"><span class="highlight"></span><span class="bar"></span>
+                <label>Nombre de usuario</label>
+            </div>
+            <div class="group">
+                <input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+                <label>Contraseña</label>
+            </div>*@
+
+        <p>Acceso denegado al usuario @User.Identity.Name con rol @User.Claims.FirstOrDefault(x => x.Type == System.Security.Claims.ClaimTypes.Role).Value</p>
+
+        <input tabindex="submit" value="Aceptar" class="button buttonEntrar" />
+
+        @*<button type="button" class="button buttonEntrar">
+                Entrar
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </button>*@
+    </form>
+</div>

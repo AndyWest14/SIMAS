@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --dark-color: #1a1a1a;
+    --white-color: #ffffff;
+    --light-grey-color: #f5f5f5;
+    --gold-color: #ffb944;
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+section { padding: 120px 0; }
+h1 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 60px; font-weight: 600; line-height: 100px;}
+h2 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 48px; margin-bottom: 30px; }
+h3 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 33px; }
+h5 { margin-bottom: 0px; }
+p{ font-size: 18px; color: #999999; line-height: 1.8; margin-bottom: 0;}
+
+.topmargin-xs{ margin-top: 15px;}
+.topmargin-sm{ margin-top: 30px;}
+.topmargin-lg{ margin-top: 60px;}
+
+
+/* ///NAVBAR/// */
+.navbar{ background: white !important; min-height: 70px; }
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link { color: #4392f1;}
+.dropdown-menu{ border-radius: 2px; border: none; color: #7f7f7f !important;}
+.dropdown-item{ color: #7f7f7f !important;}
+.nav-item { border-right: none; padding-right: 20px; color: #7f7f7f !important;}  
+.logo-brand{ min-width: 100px; max-width: 130px; margin-right: 40px;}
+.navbar-toggler:focus{ outline: none}
+.navbar .navbar-collapse { margin-top: 10px; text-align: center; }
+.nav-item .dropdown-item .dropdown-menu .navbar-collapse { text-align: center;}
+.dropdown-menu { text-align: center;}
+
+/* ///MAIN/// */
+
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 1px;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -10px;}
+.subtitulo{ color: #57555b; margin-top:4%; margin-bottom: 2%; font-size: 25px;}
+.primer-texto{ margin-top: -3%; margin-left: 12%; margin-right: 12%;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px; margin-bottom: 10px;}
+
+
+.vacaciones{ margin: 0;  padding: 0; display:flex; flex-direction: row;}
+.vacaciones > div{  height: 450px;  padding: 20px;}
+.texto-vacaciones{ width: 60%;}
+.vacaciones h3{ font-size: 25px; text-align: center; margin-top: 5%; margin-left: 25%; margin-right: 5%;  color: #57555b;}
+.vacaciones p{ text-align: justify; margin-left: 25%; margin-right: 5%; margin-top: 25px; color: #57555b; font-size: 18px;}
+.imagen-vacaciones{ width: 40%;}
+.imagen-vacaciones img{ width: 80%;  display: block; margin-top: 5%; margin-left: 0px; margin-right: auto;}
+
+
+.clases{  margin: 0; padding: 0; display: flex;flex-direction: row-reverse;}
+.clases > div { height: 500px;}
+.imagen-clases { width:50%; background: white;}
+.imagen-clases img { width: 100%; height: 100%; display: block; margin-left: auto;  margin-right: auto;}
+.texto-clases{ width:60%; background: #246eb9;}
+.texto-clases h3{ text-align: center; color: white; font-size: 25px; margin-top: 5%; margin-bottom: 4%;}
+.texto-clases li {  color: white; font-size: 16px;  margin-right: 10%;  margin-left: 20%; margin-top: 10px;  margin-bottom: 10px;}
+
+
+.platicas{ margin: 0;  padding: 0; display:flex; flex-direction: row; margin-top: 100px; }
+.platicas > div{  height: 450px;  padding: 20px;}
+.texto-platicas{ width: 60%;}
+.platicas .encabezado{ color: #57555b; text-align: center; margin-top: 1%; margin-left: 25%; margin-right: 5%; font-size: 25px;}
+.platicas h3{ font-size: 25px; text-align: left; margin-top: 5%; margin-left: 25%; color: #57555b;}
+.platicas p{ text-align: justify; margin-left: 25%; margin-right: 5%; margin-top: 25px; color: #57555b; font-size: 18px;}
+.imagen-platicas{ width: 40%;}
+.imagen-platicas img{ width: 90%; height: auto; display: block; margin-top: 5%;  margin-left: -10px; margin-right: auto;}
+
+
+/* RESPONSIVO */
+
+@media (max-width:320px)
+{
+
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+
+
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 20px; margin-right: 20px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -20%;}
+.imagen-vacaciones img { padding:0; width: 90%; height: 90%; margin-left: auto; margin-right: auto;}
+
+
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 200px !important; background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 18px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 14px;  text-align: justify; margin-right: 35px; margin-left: 35px; margin-top: 12px;  margin-bottom: 12px;}
+
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 15%; margin-bottom: 0px; margin-left: 20px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 20px; margin-right: 20px;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: 25%;}
+.imagen-platicas img { padding:0; width: 90%; height: 70%; margin-left: auto; margin-right: auto;}
+
+}
+
+@media (min-width:321px) and (max-width:480px)
+{
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+    
+    
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -20%;}
+.imagen-vacaciones img { padding:0; width: 80%; height: 90%; margin-left: auto; margin-right: auto;}
+    
+    
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 50% !important; background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 18px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 14px;  text-align: justify; margin-left: 40px; margin-right: 40px; margin-top: 12px;  margin-bottom: 12px;}
+    
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 15%; margin-bottom: 0px; margin-left: 30px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: 25%;}
+.imagen-platicas img { padding:0; width: 80%; height: 70%; margin-left: auto; margin-right: auto;}
+    
+}
+
+@media only screen and (min-width : 480px) and (max-width : 595px)
+{
+/*--- Mobile landscape ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+       
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -30%;}
+.imagen-vacaciones img { padding:0; width: 60%; height: auto; margin-left: auto; margin-right: auto;}
+    
+    
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 50% !important; background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 18px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 14px;  text-align: justify; margin-left: 40px; margin-right: 40px; margin-top: 12px;  margin-bottom: 12px;}
+    
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 5%; margin-bottom: 0px; margin-left: 30px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -5%;}
+.imagen-platicas img { padding:0; width: 80%; height: auto; margin-left: auto; margin-right: auto;}
+}
+
+@media only screen and (min-width : 595px) and (max-width : 690px) 
+{
+/*--- Small tablet portrait ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;}
+     
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -30%;}
+.imagen-vacaciones img { padding:0; width: 60%; height: 100%; margin-left: auto; margin-right: auto;}
+    
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 50% !important; background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 18px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 14px;  text-align: justify; margin-left: 40px; margin-right: 40px; margin-top: 12px;  margin-bottom: 12px;}
+    
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 15%; margin-bottom: 0px; margin-left: 30px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 30px; margin-right: 30px;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: 10%;}
+.imagen-platicas img { padding:0; width: 70%; height: 100%; margin-left: auto; margin-right: auto;}
+}
+
+@media only screen and (min-width : 690px) and (max-width : 800px) 
+{
+/*--- Tablet portrait ---*/
+.encabezado{ color: #4392f1; font-size: 18px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px;} 
+    
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 40px; margin-right: 40px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 15%; margin-top: -25%;}
+.imagen-vacaciones img { padding:0; width: 70%; height: auto; margin-left: auto; margin-right: auto;}
+    
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 50% !important; background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 18px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 14px;  text-align: justify; margin-left: 45px; margin-right: 45px; margin-top: 12px;  margin-bottom: 12px;}
+    
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 8%; margin-bottom: 0px; margin-left: 40px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 40px; margin-right: 40px; margin-bottom: 1%;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -5%;}
+.imagen-platicas img { padding:0; width: 60%; height: auto; margin-left: auto; margin-right: auto;}
+}
+
+@media (min-width:800px) and (max-width:1024px)
+{
+.encabezado{ color: #4392f1; font-size: 20px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px; margin-bottom: 10%;}
+.subtitulo{ color: #57555b; margin-top:4%; margin-bottom: 2%; font-size: 25px;}
+.primer-texto{ margin-top: -3%; margin-left: 12%; margin-right: 12%;}
+section p{ text-align: justify; font-size: 18px; margin-top: 10px; margin-bottom: 10px;}
+ 
+.vacaciones{ flex-direction: column; align-content: center;}
+.vacaciones > div { width: 100%; padding: 0;}
+.texto-vacaciones { width: 100%; padding: 0;}
+.texto-vacaciones h3{ font-size: 18px; text-align: center; margin-left: auto; margin-right: auto;}
+.texto-vacaciones p{ font-size: 14px; text-align: justify; margin-left: 55px; margin-right: 55px;}
+.imagen-vacaciones{width: 100%; height: 250px !important; margin-bottom: 15%; margin-top: -15%;}
+.imagen-vacaciones img { padding:0; width: 70%; height: auto; margin-left: auto; margin-right: auto;}
+
+.clases{ flex-direction: column; align-content: center; margin-top: 20% !important;}
+.imagen-clases { width: 100%; height: 50% !important;  background-color: beige; margin-bottom: 5%;}
+.texto-clases { width: 100%;  height: 650px  !important;}
+.texto-clases h3 { font-size: 25px; margin-top: 15%; text-align: center;  margin-left: auto; margin-right: auto; }
+.texto-clases li {color: white; font-size: 16px; text-align: justify; margin-left: 100px; margin-right: 50px; margin-top: 12px;  margin-bottom: 12px;}
+     
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-left: 5%; margin-right: 5%; font-size: 18px; }
+.texto-platicas h3{ font-size: 14px; text-align: left; margin-top: 3%; margin-bottom: 0px; margin-left: 55px; margin-right: 20px;}
+.texto-platicas p{ font-size: 14px; text-align: justify; margin-left: 55px; margin-right: 55px; margin-bottom: 1%;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: -10%;}
+.imagen-platicas img { padding:0; width: 60%; height: auto; margin-left: auto; margin-right: auto;}
+}
+
+@media (min-width:1025px) and (max-width:1200px)
+{
+.encabezado{ color: #4392f1; font-size: 20px; text-align: center; margin-bottom: 2%; line-height: 30px; margin-left: 5%; margin-right: 5%; line-break: normal;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: 10px; margin-bottom: 10%;}
+            
+.vacaciones{ margin: 0;  padding: 0; display:flex; flex-direction: row;}
+.vacaciones > div{  height: 450px;  padding: 20px;}
+.texto-vacaciones{ width: 60%;}
+.vacaciones h3{ font-size: 30px; text-align: center; margin-top: 5%; margin-left: 25%; margin-right: 5%;  color: #57555b;}
+.vacaciones p{ text-align: justify; margin-left: 25%; margin-right: 5%; margin-top: 25px; color: #57555b; font-size: 18px;}
+.imagen-vacaciones{ width: 40%;}
+.imagen-vacaciones img{ width: 90%; height: auto;  display: block; margin-top: 15%; margin-left: 0px; margin-right: auto;}
+
+
+.clases{  margin: 0; padding: 0; display: flex;flex-direction: row-reverse;}
+.clases > div { height: 420px;}
+.imagen-clases { width:50%; background: white;}
+.imagen-clases img { width: 100%; height: 100%; display: block; margin-left: auto;  margin-right: auto;}
+.texto-clases{ width:60%; background: #246eb9;}
+.texto-clases h3{ text-align: center; color: white; margin-top: 5%; margin-bottom: 4%;}
+.texto-clases li {  color: white; font-size: 13px;  margin-right: 5%;  margin-left: 15%; margin-top: 10px;  margin-bottom: 10px;}
+
+.platicas{ flex-direction: column; align-content: center; margin-top: 15% !important;}
+.platicas > div { width: 100%; padding: 0;}
+.texto-platicas { width: 100%; padding: 0;}
+.texto-platicas .encabezado{  text-align: center; margin-top: 1%; margin-bottom: 5%; margin-left: 5%; margin-right: 5%; font-size:30px; }
+.texto-platicas h3{ font-size: 20px; text-align: left; margin-top: 3%; margin-bottom: 0px; margin-left: 15%; margin-right: 20px;}
+.texto-platicas p{ font-size: 18px; text-align: justify; margin-left: 15%; margin-right: 15%; margin-bottom: 1%;}
+.imagen-platicas{width: 100%; height: 250px !important; margin-bottom: 5%; margin-top: 1%;}
+.imagen-platicas img { padding:0; width: 60%; height: auto; margin-left: auto; margin-top: 1%; margin-right: auto; margin-bottom:35%;}
+}
+
+@media (min-width:1201px) and (max-width:1440px)
+{
+.encabezado{ color: #4392f1; font-size: 30px; text-align: center; margin-bottom: 2%;}
+.linea-titulo-abajo{ width:auto; margin-left:15% !important; margin-right:15%; background: 1px solid #999999; margin-top: -40px;}
+}
+

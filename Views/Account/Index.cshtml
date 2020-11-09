@@ -1,0 +1,32 @@
+﻿
+@{
+
+    Layout = "_LayoutAccount.cshtml";
+}
+
+<section>
+    <div class="wrapper">
+        <div class="title">Bienvenido</div>
+        <form action="~/Account/Index" method="post">
+            <div class="field">
+                <input type="text" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required" data-toggle="tooltip" data-placement="top" title="Ingresa el nombre de usuario">
+                <label>Usuario</label>
+            </div>
+            <div class="field">
+                <input type="password" required oninvalid="InvalidPass(this);" oninput="InvalidPass(this);" required="required"
+                       data-toggle="tooltip" data-placement="top" title="Ingresa la contraseña">
+                <label>Contraseña</label>
+            </div>
+            <div class="content">
+
+                <div class="pass-link">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+            <div class="field">
+                <input type="submit" value="Login">
+                @Html.ValidationSummary()
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,86 @@
+﻿@model SIMAS.Areas.Administrador.Models.NoticiasViewModel
+@{
+    Layout = "_Layout";
+}
+
+
+<link rel="stylesheet" href="css/lightbox.min.css">
+<link rel="stylesheet" href="css/infonoticia.css">
+
+<section style=" height: 200px;">
+    <hr class="linea-titulo">
+    <h1 class="encabezado">@Model.Encabezado</h1>
+        <hr class="linea-titulo-abajo">
+</section>
+<section class="noticia">
+    <div class="container">
+        <img class="img-noticia" src="~/noticias/@(Model.idNoticias).jpg">
+        <p class="autor-noticia">@Model.Autor</p>
+        <p class="fecha-noticia">@Model.Fecha</p>
+        <p class="texto-noticia">
+           @Model.Cuerpo
+        </p>
+    </div>
+</section>
+
+
+<section class="galeria">
+    <a href="img/1.jpg" data-lightbox="roadtrip">
+        <img src="~/img/1.jpg" alt="">
+    </a>
+    <a href="img/2.jpg" data-lightbox="roadtrip">
+        <img src="~/img/2.jpg" alt="">
+    </a>
+    <a href="img/3.jpg" data-lightbox="roadtrip">
+        <img src="img/3.jpg" alt="">
+    </a>
+    <a href="img/4.jpg" data-lightbox="roadtrip">
+        <img src="img/4.jpg" alt="">
+    </a>
+    <a href="img/5.jpg" data-lightbox="roadtrip">
+        <img src="img/5.jpg" alt="">
+    </a>
+    <a href="img/6.jpg" data-lightbox="roadtrip">
+        <img src="img/6.jpg" alt="">
+    </a>
+    <a href="img/7.jpg" data-lightbox="roadtrip">
+        <img src="img/7.jpg" alt="">
+    </a>
+    <a href="img/8.jpg" data-lightbox="roadtrip">
+        <img src="img/8.jpg" alt="">
+    </a>
+    <a href="img/9.jpg" data-lightbox="roadtrip">
+        <img src="img/9.jpg" alt="">
+    </a>
+    <a href="img/10.jpg" data-lightbox="roadtrip">
+        <img src="img/10.jpg" alt="">
+    </a>
+    <a href="img/11.jpg" data-lightbox="roadtrip">
+        <img src="img/11.jpg" alt="">
+    </a>
+    <a href="img/12.jpg" data-lightbox="roadtrip">
+        <img src="img/12.jpg" alt="">
+    </a>
+    <a href="img/13.jpg" data-lightbox="roadtrip">
+        <img src="img/13.jpg" alt="">
+    </a>
+    <a href="img/14.jpg" data-lightbox="roadtrip">
+        <img src="img/14.jpg" alt="">
+    </a>
+    <a href="img/15.jpg" data-lightbox="roadtrip">
+        <img src="img/15.jpg" alt="">
+    </a>
+</section>
+
+<section class="video">
+    <div class="container">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="@Model.VideoURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+
+<script src="js/lightbox-plus-jquery.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/app.js"></script>
