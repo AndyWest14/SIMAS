@@ -22,6 +22,8 @@ namespace SIMAS.Controllers
             return View();
         }
 
+        
+
 
         //NOSOTROS
         [Route("Historia")]
@@ -150,22 +152,6 @@ namespace SIMAS.Controllers
             return View();
         }
 
-
-
-        //NOTICIAS
-        [Route("Noticias")]
-        public IActionResult Noticias()
-        {
-            return View();
-        }
-
-        //[Route("Noticia/{Id}")]
-        [Route("Noticia")]
-        public IActionResult Noticia()
-        {
-            return View();
-        }
-
         //GALERIA
         [Route("Galeria")]
         public IActionResult Galeria()
@@ -173,6 +159,29 @@ namespace SIMAS.Controllers
             return View();
         }
 
-       
+        [Route("Noticias/")]
+        public IActionResult Noticias()
+        {
+            NoticiasRepository noticiasRepository = new NoticiasRepository();
+            var noticiasIEnumerable = noticiasRepository.GetAll();
+            return View(noticiasIEnumerable);
+        }
+
+        [Route("Noticia/{id}")]
+        public IActionResult Noticia(string Id)
+        {
+            NoticiasRepository noticiasRepository = new NoticiasRepository();
+            var noticiaResult = noticiasRepository.GetNoticiasByNombre(Id.Replace("_", " "));
+            if (noticiaResult == null)
+            {
+                return RedirectToAction("Noticias");
+            }
+            else
+            {
+                return View(noticiaResult);
+            }
+        }
+
+
     }
 }

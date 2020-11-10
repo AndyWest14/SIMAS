@@ -1,11 +1,11 @@
-﻿@model SIMAS.Areas.Administrador.Models.NoticiasViewModel
+﻿@model SIMAS.Models.Noticias
 @{
     Layout = "_Layout";
 }
 
 
-<link rel="stylesheet" href="css/lightbox.min.css">
-<link rel="stylesheet" href="css/infonoticia.css">
+<link rel="stylesheet" href="~/css/lightbox.min.css">
+<link rel="stylesheet" href="~/css/infonoticia.css">
 
 <section style=" height: 200px;">
     <hr class="linea-titulo">
@@ -14,7 +14,7 @@
 </section>
 <section class="noticia">
     <div class="container">
-        <img class="img-noticia" src="~/noticias/@(Model.idNoticias).jpg">
+        <img class="img-noticia" src="~/noticias/@(Model.IdNoticias).jpg">
         <p class="autor-noticia">@Model.Autor</p>
         <p class="fecha-noticia">@Model.Fecha</p>
         <p class="texto-noticia">
@@ -75,12 +75,12 @@
 <section class="video">
     <div class="container">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="560" height="315" src="@Model.VideoURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="@Model.VideoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </section>
 
 
-<script src="js/lightbox-plus-jquery.min.js"></script>
-<script src="js/lightbox.min.js"></script>
-<script src="js/app.js"></script>
+<script src="~/js/lightbox-plus-jquery.min.js"></script>
+<script src="~/js/lightbox.min.js"></script>
+<script src="~/js/app.js"></script>

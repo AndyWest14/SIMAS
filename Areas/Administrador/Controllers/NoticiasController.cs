@@ -88,7 +88,6 @@ namespace SIMAS.Areas.Administrador.Controllers
                  
         }
 
-
         [Route("Administrador/EditarNoticia/{id}")]
         public IActionResult EditarNoticia(int id)
         {
@@ -190,12 +189,21 @@ namespace SIMAS.Areas.Administrador.Controllers
        
 
         [HttpPost]
-        public IActionResult EliminarNoticia(int n)
+        public IActionResult EliminarNoticia(int id)
         {
             NoticiasRepository noticiasRepository = new NoticiasRepository();
-            var noticia = noticiasRepository.NoticiaById(n);
-            return View(noticia);      
+            var n = noticiasRepository.GetById(id);
+            if (n != null)
+            {
+                noticiasRepository.Delete(n);
+                ViewBag.Mensaje = "La noticia ha sido eliminada exitosamente."; 
+            }
+            else
+              ViewBag.Mensaje = "La noticia no existe o ya ha sido eliminada.";
+            return RedirectToAction("Index");
         }
+
+
 
         [Route("Administrador/Imagen/{id}")]
         public IActionResult Imagen(int id)

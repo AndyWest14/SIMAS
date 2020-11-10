@@ -29,9 +29,9 @@
                         <th>@item.DescripcionCorta</th>
                         <th>@item.Fecha</th>
                         <th>
-                           <a href="#" target="_blank" class="a-edit">
-                            <i class="fas fa-eye"></i>
-                           </a>
+                            <a href="~/Noticia/@item.Encabezado.Replace(" ", "_")" target="_blank" class="a-edit">
+                                <i class="fas fa-eye"></i>
+                            </a>
                             <a href="~/Administrador/EditarNoticia/@item.IdNoticias" class="a-edit">
                                 <i class="fas fa-pen"></i>
                             </a>
@@ -45,17 +45,20 @@
             </tbody>
         </table>
 
-        <form method="post" action="~/Administrador/Noticia/EliminarNoticia">
-            <input name="id" id="idNot" type="hidden" />
+
+
+        <form method="post" action="~/Administrador/Noticias/EliminarNoticia">
+            <input name="id" id="idNoticia" type="hidden" />
         </form>
 
         <script>
-            function eliminar(idNot) {
-                document.getElementById("idNot").value = idNot;
+            function eliminar(idNoticia) {
+                document.getElementById("idNoticia").value = idNoticia;
                 if (confirm('¿Desea eliminar esta noticia?')) {
                     document.forms[0].submit()
                 };
             }
         </script>
+
     </div>
 </div>

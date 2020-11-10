@@ -20,7 +20,7 @@
         <form action="~/Administrador/Noticias/AgregarNoticia" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleInputEmail1">Encabezado</label>
-                <input asp-for="Encabezado" name="Encabezado" type="Text" class="form-control" id="name" aria-describedby="name">
+                <input asp-for="Encabezado" name="Encabezado" type="Text" class="form-control" id="name" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$" title="El nombre de la noticia no puede contener caracteres especiales." aria-describedby="name">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Autor</label>

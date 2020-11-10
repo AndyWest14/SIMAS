@@ -3,7 +3,7 @@
     Layout = "_Layout";
 }
 
-<link rel="stylesheet" href="../css/listanoticias.css">
+<link rel="stylesheet" href="~/css/listanoticias.css">
 
 <section style=" height: 200px;">
     <h1 class="encabezado">Noticias SIMAS</h1>
@@ -15,8 +15,8 @@
     {
         <div class="contenedor">
             <div class="noticia">
-                <img src="~/img/@(item.IdNoticias).jpg">
-                <a href="~/Administrador/Noticia/@item.Encabezado.Replace(" ", "_")" class="nombre-noticia"> @item.Encabezado</a>
+                <img src="~/noticias/@(item.IdNoticias).jpg">
+                <a href="~/Noticia/@item.Encabezado.Replace(" ", "_")" class="nombre-noticia"> @item.Encabezado</a>
             </div>
         </div>
     }
