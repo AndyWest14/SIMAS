@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 
 namespace SIMAS.Models
 {
-    public partial class Noticias
+    public  class Noticias
     {
-        public Noticias()
-        {
-            Fotosnoticia = new HashSet<Fotosnoticia>();
-        }
+     
 
         public int IdNoticias { get; set; }
         public string Encabezado { get; set; }
@@ -17,7 +15,5 @@ namespace SIMAS.Models
         public string DescripcionCorta { get; set; }
         public string Cuerpo { get; set; }
         public string VideoUrl { get; set; }
-
-        public ICollection<Fotosnoticia> Fotosnoticia { get; set; }
     }
 }
