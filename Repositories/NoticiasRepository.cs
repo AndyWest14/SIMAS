@@ -22,7 +22,6 @@ namespace SIMAS.Repositories
         public Noticias GetNoticiasByNombre (string encabezado)
         {
             return GetAll().FirstOrDefault(x => x.Encabezado == encabezado);
-            //return Context.Noticias.FirstOrDefault(x => x.Encabezado.ToUpper() == encabezado.ToUpper());
         }
 
         public NoticiasViewModel NoticiaById(int Id)
@@ -77,7 +76,6 @@ namespace SIMAS.Repositories
         public void Update(NoticiasViewModel noticiasViewModel)
         {
             var noticiaResult = Context.Noticias.FirstOrDefault(x => x.IdNoticias == noticiasViewModel.idNoticias);
-           // var noticiaResult = GetById(noticiasViewModel.idNoticias);
             if (noticiaResult != null)
             {
                 noticiaResult.Encabezado = noticiasViewModel.Encabezado;
@@ -93,11 +91,10 @@ namespace SIMAS.Repositories
 
         public void SetNoPhoto(int id, string path)
         {
-            var origen = Path.Combine(path, "noticias", "Logosimas.jpg");
+            var origen = Path.Combine(path, "noticias", "nophoto.png");
             var destino = Path.Combine(path, "noticias", $"{id}.jpg");
             File.Copy(origen, destino);
         }
-
 
         public void GuardarArchivo(int id, IFormFile archivo, string path)
         {

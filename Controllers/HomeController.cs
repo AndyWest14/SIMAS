@@ -22,9 +22,6 @@ namespace SIMAS.Controllers
             return View();
         }
 
-        
-
-
         //NOSOTROS
         [Route("Historia")]
         public IActionResult Historia()
@@ -181,7 +178,5 @@ namespace SIMAS.Controllers
                 return View(noticiaResult);
             }
         }
-
-
     }
 }

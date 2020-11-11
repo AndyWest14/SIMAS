@@ -15,8 +15,12 @@
     {
         <div class="contenedor">
             <div class="noticia">
-                <img src="~/noticias/@(item.IdNoticias).jpg">
-                <a href="~/Noticia/@item.Encabezado.Replace(" ", "_")" class="nombre-noticia"> @item.Encabezado</a>
+                <div class="imagen-noticia">
+                    <img src="~/noticias/@(item.IdNoticias).jpg">
+                </div>
+                <div class="nombre-noticia">
+                    <a href="~/Noticia/@item.Encabezado.Replace(" ", "_")" class="nombre-noticia"> @item.Encabezado</a>
+                </div>
             </div>
         </div>
     }
