@@ -17,6 +17,7 @@ namespace SIMAS.Models
 
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Documento> Documento { get; set; }
+        public virtual DbSet<Fotosnoticia> Fotosnoticia { get; set; }
         public virtual DbSet<Noticias> Noticias { get; set; }
         public virtual DbSet<Subcategorias> Subcategorias { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
@@ -78,6 +79,26 @@ namespace SIMAS.Models
                     .HasForeignKey(d => d.IdSubCategoria)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("IdSubCategoriaDocumento");
+            });
+
+            modelBuilder.Entity<Fotosnoticia>(entity =>
+            {
+                entity.HasKey(e => e.IdFoto);
+
+                entity.ToTable("fotosnoticia");
+
+                entity.HasIndex(e => e.IdNoticia)
+                    .HasName("FotosNoticia_idx");
+
+                entity.Property(e => e.IdFoto).HasColumnType("int(11)");
+
+                entity.Property(e => e.IdNoticia).HasColumnType("int(11)");
+
+                entity.HasOne(d => d.IdNoticiaNavigation)
+                    .WithMany(p => p.Fotosnoticia)
+                    .HasForeignKey(d => d.IdNoticia)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FotosNoticia");
             });
 
             modelBuilder.Entity<Noticias>(entity =>
