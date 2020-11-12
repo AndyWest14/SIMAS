@@ -44,16 +44,16 @@
             </div>
 
             <div class="input-group" style=" margin-top: 2%; margin-bottom: 2%;">
-                <input type="file" asp-for="Foto" name="Foto"  accept="image/jpeg" class="custom-file-input" id="inputGroupFile04">
+                <input type="file" asp-for="Foto" name="Foto lang=" es"" accept="image/jpeg" class="custom-file-input" id="inputGroupFile04">
                 <label class="custom-file-label" for="inputGroupFile04">Subir foto principal</label>
                 <small id="name" class="form-text text-muted">(formato .jpg)</small>
             </div>
 
-            @*<div class="input-group" style="margin-bottom: 4%;">
-                <input type="file" class="custom-file-input" id="inputGroupFile04" multiple>
+            <div class="input-group" style="margin-bottom: 4%;">
+                <input type="file" asp-for="Fotos" name="Fotos" lang="es" class="custom-file-input" id="inputGroupFile04" multiple>
                 <label class="custom-file-label" for="inputGroupFile04">Subir galería de fotos</label>
                 <small id="name" class="form-text text-muted">(formato .jpg)</small>
-            </div>*@
+            </div>
 
             <label for="basic-url">Video de la noticia el enlace debe ser de YouTube.com</label>
             <div class="input-group mb-3">
@@ -67,7 +67,9 @@
 
             <input type="submit" class="btn btn-primary" value="Agregar">
             <a class="btn btn-primary" href="~/Administrador/Noticias">Cancelar</a>
+
+           
+
         </form>
     </div>
 </div>
-

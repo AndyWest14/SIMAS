@@ -34,7 +34,8 @@ function colorLink(){
 linkColor.forEach(l=> l.addEventListener('click', colorLink))
 
 
-$(document).ready(function() {
+$(document).ready(function () {
+
     var table = $('#example').DataTable( {
         rowReorder: {
             selector: 'td:nth-child(2)'
@@ -72,8 +73,12 @@ $(document).ready(function() {
         
     } );
 
+
+
 } );
 
-$(document).on('change', '.custom-file-input', function (event) {
-    $(this).next('.custom-file-label').html(event.target.files[0].name);
-})
+
+
+
+
+    

@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using SIMAS.Areas.Administrador.Models;
 using System.Text.RegularExpressions;
 using SIMAS.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace SIMAS.Areas.Administrador.Controllers
 {
@@ -20,6 +22,8 @@ namespace SIMAS.Areas.Administrador.Controllers
         {
             Environment = env;
         }
+
+        private readonly IHostingEnvironment hostingEnvironment;
 
         [Route("Administrador/Noticias")]
         public IActionResult Index()
@@ -38,6 +42,7 @@ namespace SIMAS.Areas.Administrador.Controllers
         [HttpPost]
         public IActionResult AgregarNoticia(NoticiasViewModel n)
         {
+            string uniqueFileName = null;
             if (ModelState.IsValid)
             {
                 try
@@ -67,6 +72,9 @@ namespace SIMAS.Areas.Administrador.Controllers
                         {
                             noticiasRepository.GuardarArchivo(n.idNoticias, n.Foto, $"{Environment.WebRootPath}");
                         }
+
+                        noticiasRepository.GuardarArchivo(n.idNoticias, n.Foto, $"{Environment.WebRootPath}");
+
                         return RedirectToAction("Noticias", "Administrador");
                     }
                     else
@@ -74,6 +82,9 @@ namespace SIMAS.Areas.Administrador.Controllers
                         ModelState.AddModelError("", "Ya existe una noticia con este nombre");
                         return View(n);
                     }
+                
+
+                
                 }
                 catch (Exception ex)
                 {
