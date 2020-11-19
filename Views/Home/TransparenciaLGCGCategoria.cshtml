@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<SIMAS.Models.Categorias>
 @{
     Layout = "_Layout";
 }
@@ -19,8 +19,11 @@
             <h1 class="nombrecategoria">Ley de disciplina financiera</h1>
             <hr class="linea-nombre-abajo">
             <ul style="list-style: none;">
-                <li><a href="~/TransparenciaLGCGArchivos">Cumplimiento de ley de disciplina financiera</a></li>
-                <li><a href="~/TransparenciaLGCGArchivos">Otros</a></li>
+
+                @foreach (var item in Model)
+                {
+                   <li><a href="~/TransparenciaLGCGArchivos/@item.IdCategoria">@item.Nombre</a></li>
+                }
             </ul>
         </div>
     </section>

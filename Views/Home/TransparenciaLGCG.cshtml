@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<SIMAS.Models.Categorias>
 @{
     Layout = "_Layout";
 }
@@ -14,37 +14,25 @@
         <p>Aquí se presenta toda la información aplicable a nuestro organismo bajo la Ley General de Contabilidad Gubernamental</p>
     </div>
     <section style="background-color: #FAFAFA;" class="categorias">
+        
+        
         <div class="contenido">
-            <div class="card">
-                <h2 class="nombre">Ley de disciplina financiera</h2>      
-                    <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
-            <div class="card">
-                <h2 class="nombre">Información financiera</h2>
-                <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
+
+
+            @foreach (var item in Model)
+            {
+                <div class="card">
+                    <h2 class="nombre">Ley de disciplina financiera</h2>
+                    <a class="ver" href="~/TransparenciaLGCGCategoria/@item.Nombre.Replace(" ", "_")">Ver más</a>
+                </div>
+            }
+
+
         </div>
-        <div class="contenido">
-            <div class="card">
-                <h2 class="nombre">Información presupuestal</h2>
-                <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
-            <div class="card">
-                <h2 class="nombre">Información programática</h2>
-                <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
-        </div>
-        <div class="contenido">
-            <div class="card">
-                <h2 class="nombre">Otra información</h2>
-                <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
-            <div class="card">
-                <h2 class="nombre">Titulo VLGCG</h2>
-                <a class="ver" href="~/TransparenciaLGCGCategoria">Ver más</a>
-            </div>
-        </div>
+
     </section>
+   
+    
     <section class="info">
         <div class="primer-texto">
             <p>Para la aclaración de cualquier duda o mayor información favor de presentarse en nuestras oficinas<br> o comunicarse vía telefónica o correo electrónico</p>

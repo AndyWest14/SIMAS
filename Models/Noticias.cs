@@ -6,8 +6,6 @@ namespace SIMAS.Models
 {
     public  class Noticias
     {
-     
-
         public int IdNoticias { get; set; }
         public string Encabezado { get; set; }
         public DateTime Fecha { get; set; }

@@ -1,0 +1,57 @@
+﻿@model SIMAS.Areas.Administrador.Models.DocumentoViewModel
+@inject SIMAS.Services.MenuService ms
+@{
+    Layout = "~/Areas/Administrador/views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/agregar.css">
+
+<div class="card mb-3" id="card-admin" style="margin-top: 10%;">
+    <div class="card-header">
+        <h3> <i class="fas fa-plus"></i> <span>Añadir documento LGCG</span></h3>
+    </div>
+    <div class="card-body">
+        <form action="~/Administrador/DocumentosLGCG/AgregarDocumento" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del documento</label>
+                <input asp-for="Nombre" name="Nombre" type="text" class="form-control" id="name" aria-describedby="name">
+            </div>
+
+            <div class="input-group" style=" margin-top: 2%; margin-bottom: 2%;">
+                <input type="file" asp-for="Documento" name="Documento" class="custom-file-input" id="inputGroupFile04" accept="application/pdf">
+                <label class="custom-file-label" for="inputGroupFile04"></label>
+                <small id="name" class="form-text text-muted">(formato .pdf)</small>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 2%;">
+                <label for="inputCategoria">Seleccione una categoria</label>
+
+                <select asp-for="IdCategoria" name="IdCategoria" id="inputCategoria" class="form-control">
+                    @foreach (var item in ms.GetNombreCategorias())
+                    {
+                        <option value="@item.IdCategoria">@(item.Nombre)</option>
+                    }
+                </select>
+
+            </div>
+
+            <div class="form-group" style="margin-bottom: 4%;">
+                <label for="inputCategoria">Seleccione una subcategoria</label>
+
+               <select id="inputCategoria"  asp-for="IdSubCategoria" name="IdSubCategoria" class="form-control">
+                    @foreach (var item in ms.GetNombreSubcategorias())
+                    {
+                        <option value="@item.Idsubcategorias">@(item.Nombre)</option>
+                    }
+                </select>
+
+            </div>
+            @Html.ValidationSummary()
+
+
+            <input type="submit" class="btn btn-primary" value="Agregar">
+            <a class="btn btn-primary" href="~/Administrador/DocumentosLGCG">Cancelar</a>
+
+        </form>
+    </div>
+</div>

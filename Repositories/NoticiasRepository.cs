@@ -104,6 +104,18 @@ namespace SIMAS.Repositories
             fs.Close();
         }
 
+        public void GuardarFotos(int id, IList<IFormFile> fotos, string path)
+        {
+            foreach (var item in fotos)
+            {
+                var ruta = Path.Combine(path,"noticias" + "/" + id, fotos.IndexOf(item) + "_" + id + ".jpg");
+                FileStream fs = File.Create(ruta);
+                item.CopyTo(fs);
+                fs.Close();
+            }
+        }
+
+      
 
     }
 }

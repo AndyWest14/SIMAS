@@ -1,11 +1,12 @@
 ﻿
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SIMAS.Models.ViewModels
+namespace SIMAS.Areas.Administrador.Models
 {
     public class DocumentoViewModel
     {
@@ -21,5 +22,6 @@ namespace SIMAS.Models.ViewModels
         [Required(ErrorMessage = "La subcategoria es obligatoria")]
         public int IdSubCategoria { get; set; }
 
+        public IFormFile Documento { get; set; }
     }
 }

@@ -1,8 +1,81 @@
-﻿
+﻿@model IEnumerable<SIMAS.Models.Documento>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "_LayoutAdmin.cshtml";
+    Layout = "~/Areas/Administrador/views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<link rel="stylesheet" href="~/css/admindocumentos.css">
 
+
+<div class="card mb-3" style="margin-top: 10%; padding: 0px;">
+    <div class="card-header">
+
+        <h3>Lista documentos</h3>
+        <a href="~/Administrador/AgregarDocumento"> <i class="fas fa-plus"></i> <span>Añadir un documento</span></a>
+    </div>
+    <div class="card-body">
+        <table id="example" class="table display row-border cell-border table-striped" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Nombre archivo</th>
+                    <th>Categoria</th>
+                    <th>Subcategoria</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>CUENTA PUBLICA 2016</th>
+                    <th>Información financiera</th>
+                    <th>Cuenta pública</th>
+                    <th>
+                        <a href="" class="a-edit">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="" class="a-delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>ESTADO ESTADO ANALITICO DE INGRESOS </th>
+                    <th>Información presupuestal</th>
+                    <th>Estado analítico de ingresos</th>
+                    <th>
+                        <a href="" class="a-edit">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="" class="a-delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>INVENTARIO DE BIENES MUEBLES A JUNIO 2020</th>
+                    <th>Otra información</th>
+                    <th>Inventario de bienes muebles</th>
+                    <th>
+                        <a href="" class="a-edit">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="" class="a-delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </th>
+                </tr>
+                </tbody>
+        </table>
+
+        <form method="post" action="~/Administrador/DocumentosLGCG/EliminarDocumento">
+            <input name="id" id="idDocumento" type="hidden" />
+        </form>
+
+        <script>
+            function eliminar(idDocumento) {
+                document.getElementById("idDocumento").value = idDocumento;
+                if (confirm('¿Desea eliminar este documento?')) {
+                    document.forms[0].submit()
+                };
+            }
+        </script>
+    </div>
+</div>

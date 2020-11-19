@@ -1,9 +1,10 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 
 namespace SIMAS.Models
 {
-    public partial class Categorias
+    public class Categorias
     {
         public Categorias()
         {
