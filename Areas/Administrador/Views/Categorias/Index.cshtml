@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SIMAS.Models.Categorias>
+@{
+    Layout = "~/Areas/Administrador/views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/admindocumentos.css">
+
+
+<div class="card mb-3" style="margin-top: 10%; padding: 0px;">
+    <div class="card-header">
+
+        <h3>Lista de categorías LGCG</h3>
+        <a href="~/Administrador/AgregarCategoria"> <i class="fas fa-plus"></i> <span>Añadir una categoría</span></a>
+    </div>
+    <div class="card-body">
+        <table id="example" class="table display row-border cell-border table-striped" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Nombre categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Nombre</th>
+                        <th>
+                            <a href="~/Administrador/EditarCategoria/@item.IdCategoria" class="a-edit">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a href="javascript:eliminar(@item.IdCategoria)" class="a-delete">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </th>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+        <form method="post" action="~/Administrador/Categorias/EliminarCategoria">
+            <input name="id" id="idCategoria" type="hidden" />
+        </form>
+
+        <script>
+            function eliminar(idCategoria) {
+                document.getElementById("idCategoria").value = idCategoria;
+                if (confirm('¿Desea eliminar esta categoria?')) {
+                    document.forms[0].submit()
+                };
+            }
+        </script>
+    </div>
+</div>

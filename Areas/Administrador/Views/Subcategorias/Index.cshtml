@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SIMAS.Models.Subcategorias>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrador/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/admindocumentos.css">
+
+<div class="card mb-3" style="margin-top: 10%; padding: 0px;">
+    <div class="card-header">
+
+        <h3>Lista de subcategorias LGCG</h3>
+        <a href="~/Administrador/AgregarSubcategoria"> <i class="fas fa-plus"></i> <span>Añadir una subcategoria</span></a>
+    </div>
+    <div class="card-body">
+        <table id="example" class="table display row-border cell-border table-striped" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Nombre subcategoria</th>
+                    <th>Categoria</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>@item.Nombre</th>
+                    <th>@item.IdCategoriaNavigation.Nombre</th>
+                    <th>
+                        <a href="~/Administrador/EditarCategoria/@item.Idsubcategorias" class="a-edit">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                        <a href="javascript:eliminar(@item.Idsubcategorias)" class="a-delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </th>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <form method="post" action="~/Administrador/Subcategorias/EliminarSubcategoria">
+            <input name="id" id="idSubCat" type="hidden" />
+        </form>
+
+        <script>
+            function eliminar(idSubCat) {
+                document.getElementById("idSubCat").value = idSubCat;
+                if (confirm('¿Desea eliminar esta subcategoria?')) {
+                    document.forms[0].submit()
+                };
+            }
+        </script>
+
+    </div>
+</div>

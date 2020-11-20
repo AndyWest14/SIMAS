@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Administrador\Repositories\" />
+    <Folder Include="wwwroot\DocumentosLGCG\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 

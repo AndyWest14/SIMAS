@@ -71,6 +71,13 @@ namespace SIMAS.Repositories
             }
         }
 
-     
+        public void GuardarArchivo(int id, IFormFile documento, string path)
+        {
+            var ruta = Path.Combine(path, "DocumentosLGCG", id + ".pdf");
+            FileStream fs = File.Create(ruta);
+            documento.CopyTo(fs);
+            fs.Close();
+        }
+
     }
 }

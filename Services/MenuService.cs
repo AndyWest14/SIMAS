@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using SIMAS.Repositories;
 using SIMAS.Models;
-using SIMAS.Areas.Administrador.Models.ViewModels;
-
 namespace SIMAS.Services
 {
     public class MenuService
