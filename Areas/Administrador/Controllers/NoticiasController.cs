@@ -17,7 +17,6 @@ namespace SIMAS.Areas.Administrador.Controllers
     public class NoticiasController : Controller
     {
         public IHostingEnvironment Environment { get; set; }
-
         public NoticiasController(IHostingEnvironment env)
         {
             Environment = env;
@@ -30,14 +29,12 @@ namespace SIMAS.Areas.Administrador.Controllers
             NoticiasRepository repos = new NoticiasRepository();
             return View(repos.GetNoticias());
         }
-
         //Administrador ---- AgregarNoticia
         [Route("Administrador/AgregarNoticia")]
         public IActionResult AgregarNoticia()
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult AgregarNoticia(NoticiasViewModel n)
         {
@@ -51,7 +48,6 @@ namespace SIMAS.Areas.Administrador.Controllers
                     if (notic == null)
                     {
                         noticiasRepository.Insert(n);
-
                         if (n.Foto == null)
                         {
                             noticiasRepository.SetNoPhoto(n.idNoticias, $"{Environment.WebRootPath}");
@@ -70,20 +66,13 @@ namespace SIMAS.Areas.Administrador.Controllers
                         {
                             noticiasRepository.GuardarArchivo(n.idNoticias, n.Foto, $"{Environment.WebRootPath}");
                         }
-
-                        noticiasRepository.GuardarArchivo(n.idNoticias, n.Foto, $"{Environment.WebRootPath}");
                         return RedirectToAction("Noticias", "Administrador");
-
-                      
                     }
                     else
                     {
                         ModelState.AddModelError("", "Ya existe una noticia con este nombre");
                         return View(n);
                     }
-
-                  
-                
                 }
                 catch (Exception ex)
                 {
@@ -95,9 +84,8 @@ namespace SIMAS.Areas.Administrador.Controllers
             {
                 return View(n);
             }
-                 
-        }
 
+        }
         [Route("Administrador/EditarNoticia/{id}")]
         public IActionResult EditarNoticia(int id)
         {
@@ -109,11 +97,9 @@ namespace SIMAS.Areas.Administrador.Controllers
             }
             else
             {
-               return View(n);
+                return View(n);
             }
         }
-
-
         [HttpPost]
         public IActionResult EditarNoticia(NoticiasViewModel n)
         {
@@ -123,11 +109,9 @@ namespace SIMAS.Areas.Administrador.Controllers
                 {
                     NoticiasRepository noticiasRepository = new NoticiasRepository();
                     var notic = noticiasRepository.GetNoticiasByNombre(n.Encabezado);
-
                     if (notic == null)
                     {
                         noticiasRepository.Update(n);
-
                         if (n.Foto == null)
                         {
                         }
@@ -155,14 +139,11 @@ namespace SIMAS.Areas.Administrador.Controllers
                         notic.DescripcionCorta = n.DescripcionCorta;
                         notic.Cuerpo = n.Cuerpo;
                         notic.VideoUrl = n.VideoURL;
-
                         noticiasRepository.Update(notic);
-
                         if (n.Foto == null)
                         {
                             //noticiasRepository.SetNOPhoto(n.idNoticias, Environment.WebRootPath);
                         }
-
                         else if (n.Foto.ContentType != "image/jpeg")
                         {
                             ModelState.AddModelError("", "Solo se pueden cargar imagenes JPG");
@@ -196,7 +177,6 @@ namespace SIMAS.Areas.Administrador.Controllers
                 return View(n);
             }
         }
-       
 
         [HttpPost]
         public IActionResult EliminarNoticia(int id)
@@ -206,21 +186,17 @@ namespace SIMAS.Areas.Administrador.Controllers
             if (n != null)
             {
                 noticiasRepository.Delete(n);
-                ViewBag.Mensaje = "La noticia ha sido eliminada exitosamente."; 
+                ViewBag.Mensaje = "La noticia ha sido eliminada exitosamente.";
             }
             else
-              ViewBag.Mensaje = "La noticia no existe o ya ha sido eliminada.";
+                ViewBag.Mensaje = "La noticia no existe o ya ha sido eliminada.";
             return RedirectToAction("Index");
         }
-
-
-
         [Route("Administrador/Imagen/{id}")]
         public IActionResult Imagen(int id)
         {
             NoticiasRepository repos = new NoticiasRepository();
             var n = repos.NoticiaById(id);
-
             if (n == null)
             {
                 return RedirectToAction("Index");
@@ -246,7 +222,6 @@ namespace SIMAS.Areas.Administrador.Controllers
                     ModelState.AddModelError("", "El tamaño máximo del archivo debe ser 1MB.");
                     return View(n);
                 }
-
                 repos.GuardarArchivo(n.idNoticias, n.Foto, Environment.WebRootPath);
                 return RedirectToAction("Index");
             }
@@ -256,11 +231,9 @@ namespace SIMAS.Areas.Administrador.Controllers
                 return View(n);
             }
         }
-
         public IActionResult VistaPrevia()
         {
             return View();
         }
-
     }
 }

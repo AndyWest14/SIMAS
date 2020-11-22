@@ -23,5 +23,17 @@ namespace SIMAS.Services
             return list;
         }
 
+        public IEnumerable<Noticias> GetAllNoticias()
+        {
+            NoticiasRepository noticiasRepository = new NoticiasRepository();
+            return noticiasRepository.GetAll();
+        }
+
+        public IEnumerable<string> GetAllNoticiasNombre()
+        {
+            NoticiasRepository noticiasRepository = new NoticiasRepository();
+            return noticiasRepository.GetAll().Select(x => x.Encabezado);
+        }
+
     }
 }

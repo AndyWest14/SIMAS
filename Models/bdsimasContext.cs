@@ -70,13 +70,11 @@ namespace SIMAS.Models
                 entity.HasOne(d => d.IdCategoriaNavigation)
                     .WithMany(p => p.Documento)
                     .HasForeignKey(d => d.IdCategoria)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("IdCategoriaDocumento");
 
                 entity.HasOne(d => d.IdSubCategoriaNavigation)
                     .WithMany(p => p.Documento)
                     .HasForeignKey(d => d.IdSubCategoria)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("IdSubCategoriaDocumento");
             });
 
@@ -131,7 +129,6 @@ namespace SIMAS.Models
                 entity.HasOne(d => d.IdCategoriaNavigation)
                     .WithMany(p => p.Subcategorias)
                     .HasForeignKey(d => d.IdCategoria)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("IdCategoria");
             });
 

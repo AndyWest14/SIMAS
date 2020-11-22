@@ -17,10 +17,11 @@
 
 <div class="card mb-3" id="card-admin" style="margin-top: 10%;">
     <div class="card-header">
-        <h3> <i class="fas fa-plus"></i> <span>Añadir documento LGCG</span></h3>
+        <h3> <i class="fas fa-edit"></i> <span>Editar documento LGCG</span></h3>
     </div>
     <div class="card-body">
-        <form action="~/Administrador/DocumentosLGCG/AgregarDocumento" method="post" enctype="multipart/form-data">
+        <form action="~/Administrador/DocumentosLGCG/EditarDocumento" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="IdDocumento" />
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre del documento</label>
                 <input asp-for="Nombre" name="Nombre" type="text" class="form-control" id="name" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$" title="El nombre del documento no puede contener caracteres especiales." aria-describedby="name">
@@ -58,7 +59,7 @@
             @Html.ValidationSummary()
 
 
-            <input type="submit" class="btn btn-primary" value="Agregar">
+            <input type="submit" class="btn btn-primary" value="Editar">
             <a class="btn btn-primary" href="~/Administrador/DocumentosLGCG">Cancelar</a>
 
         </form>

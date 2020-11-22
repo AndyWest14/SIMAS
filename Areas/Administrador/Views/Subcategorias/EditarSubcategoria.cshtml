@@ -6,16 +6,26 @@
 
 
 <link rel="stylesheet" href="~/css/agregar.css">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<script src="https://kit.fontawesome.com/c1a10add69.js" crossorigin="anonymous"></script>
+<link rel="stylsheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <div class="card mb-3" id="card-admin" style="margin-top: 10%;">
     <div class="card-header">
         <h3> <i class="fas fa-edit"></i> <span>Editar subcategoria LGCG</span></h3>
     </div>
     <div class="card-body">
-        <form action="~/Administrador/Subcategorias/EditarSubcategoria" method="post" enctype="multipart/form-data">
+        <form action="~/Administrador/Subcategorias/EditarSubcategoria" method="post">
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre de la subcategoria</label>
-                <input class="form-control" asp-for="Nombre" name="Nombre" type="text" id="name" aria-describedby="name">
+                <input class="form-control" asp-for="Nombre" name="Nombre" type="text" id="name" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$" title="El nombre de la subcategoria no puede contener caracteres especiales." aria-describedby="name">
             </div>
 
             <div class="form-group" style="margin-bottom: 2%;">

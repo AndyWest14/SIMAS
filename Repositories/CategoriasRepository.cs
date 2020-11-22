@@ -33,7 +33,6 @@ namespace SIMAS.Repositories
         {
             Categorias categorias = new Categorias
             {
-                IdCategoria = vm.IdCategoria,
                 Nombre = vm.Nombre
             };
             Insert(categorias);

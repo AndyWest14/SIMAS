@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
 <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="icons/site.webmanifest">
+<link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
 
 
 <div class="card mb-3" id="card-admin" style="margin-top: 10%;">
@@ -21,7 +28,7 @@
         <form action="~/Administrador/Categorias/AgregarCategoria" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre de la categoria</label>
-                <input class="form-control" asp-for="Nombre" name="Nombre" type="text" id="name" aria-describedby="name">
+                <input class="form-control" asp-for="Nombre" name="Nombre" type="text" id="name" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$" title="El nombre de la categoria no puede contener caracteres especiales." aria-describedby="name">
             </div>
 
             @Html.ValidationSummary()

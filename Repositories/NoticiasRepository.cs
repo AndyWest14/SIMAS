@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using SIMAS.Areas.Administrador.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,23 +8,19 @@ using System.Net;
 using System.Threading.Tasks;
 using System.IO;
 using SIMAS.Models;
-using SIMAS.Areas.Administrador.Models;
-
 
 namespace SIMAS.Repositories
 {
     public class NoticiasRepository : Repository<Noticias>
-    {   
+    {
         public IEnumerable<Noticias> GetNoticias()
         {
-            return GetAll().OrderBy(x => x.Encabezado);      
+            return GetAll().OrderBy(x => x.Encabezado);
         }
-
-        public Noticias GetNoticiasByNombre (string encabezado)
+        public Noticias GetNoticiasByNombre(string encabezado)
         {
             return GetAll().FirstOrDefault(x => x.Encabezado == encabezado);
         }
-
         public NoticiasViewModel NoticiaById(int Id)
         {
             return Context.Noticias.Where(x => x.IdNoticias == Id)
@@ -36,11 +33,8 @@ namespace SIMAS.Repositories
                     DescripcionCorta = x.DescripcionCorta,
                     Cuerpo = x.Cuerpo,
                     VideoURL = x.VideoUrl
-
-
                 }).FirstOrDefault();
         }
-
         public NoticiasViewModel GetNoticiaByFecha(DateTime fecha)
         {
             return Context.Noticias.Where(x => x.Fecha == fecha)
@@ -53,26 +47,22 @@ namespace SIMAS.Repositories
                     DescripcionCorta = x.DescripcionCorta,
                     Cuerpo = x.Cuerpo,
                     VideoURL = x.VideoUrl
-
                 }).FirstOrDefault();
         }
-
         public void Insert(NoticiasViewModel noticiasViewModel)
         {
             Noticias noticias = new Noticias
             {
                 Encabezado = noticiasViewModel.Encabezado,
-                Fecha = noticiasViewModel.Fecha,
+                Fecha = DateTime.Now,
                 Autor = noticiasViewModel.Autor,
                 DescripcionCorta = noticiasViewModel.DescripcionCorta,
                 Cuerpo = noticiasViewModel.Cuerpo,
                 VideoUrl = noticiasViewModel.VideoURL
             };
-
             Insert(noticias);
             noticiasViewModel.idNoticias = noticias.IdNoticias;
         }
-
         public void Update(NoticiasViewModel noticiasViewModel)
         {
             var noticiaResult = Context.Noticias.FirstOrDefault(x => x.IdNoticias == noticiasViewModel.idNoticias);
@@ -84,18 +74,15 @@ namespace SIMAS.Repositories
                 noticiaResult.DescripcionCorta = noticiasViewModel.DescripcionCorta;
                 noticiaResult.Cuerpo = noticiasViewModel.Cuerpo;
                 noticiaResult.VideoUrl = noticiasViewModel.VideoURL;
-
                 Update(noticiaResult);
             }
         }
-
         public void SetNoPhoto(int id, string path)
         {
             var origen = Path.Combine(path, "noticias", "nophoto.png");
             var destino = Path.Combine(path, "noticias", $"{id}.jpg");
             File.Copy(origen, destino);
         }
-
         public void GuardarArchivo(int id, IFormFile archivo, string path)
         {
             var ruta = Path.Combine(path, "noticias", id + ".jpg");
@@ -104,16 +91,6 @@ namespace SIMAS.Repositories
             fs.Close();
         }
 
-        public void GuardarFotos(int id, IList<IFormFile> fotos, string path)
-        {
-            foreach (var item in fotos)
-            {
-                var ruta = Path.Combine(path,"noticias" + "/" + id, fotos.IndexOf(item) + "_" + id + ".jpg");
-                FileStream fs = File.Create(ruta);
-                item.CopyTo(fs);
-                fs.Close();
-            }
-        }
 
     }
 }

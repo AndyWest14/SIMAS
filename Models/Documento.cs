@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SIMAS.Models
 {
-    public class Documento
+    public partial class Documento
     {
         public int IdDocumento { get; set; }
         public string Nombre { get; set; }

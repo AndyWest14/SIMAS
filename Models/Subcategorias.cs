@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SIMAS.Models
 {
-    public class Subcategorias
+    public partial class Subcategorias
     {
         public Subcategorias()
         {

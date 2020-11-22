@@ -22,7 +22,7 @@ namespace SIMAS.Areas.Administrador.Models
         [Required(ErrorMessage = "La subcategoria es obligatoria")]
         public int IdSubCategoria { get; set; }
 
-        [Required(ErrorMessage = "No se puede agregar un documento sin archivo")]
+        [Required(ErrorMessage = "No se puede agregar un documento sin archivo pdf")]
         [NotMapped]
         public IFormFile Documento { get; set; }
     }

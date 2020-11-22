@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using SIMAS.Repositories;
 using SIMAS.Areas.Administrador.Models;
+using System.Text.RegularExpressions;
+using System;
+using System.Collections.Generic;
 
 namespace SIMAS.Areas.Administrador.Controllers
 {
@@ -19,8 +22,11 @@ namespace SIMAS.Areas.Administrador.Controllers
         public IActionResult Index()
         {
             DocumentosRepository repos = new DocumentosRepository();
-            return View(repos.GetDocumentos());
+            var documentosIEnumerable = repos.GetDocumentoConNavigationCategoria();
+            //var documentoIEnumerable = repos.GetDocumentoConNavigationSubcategoria();
+            return View(documentosIEnumerable);
         }
+
 
         [Route("Administrador/AgregarDocumento")]
         public IActionResult AgregarDocumento()
@@ -33,14 +39,37 @@ namespace SIMAS.Areas.Administrador.Controllers
         [HttpPost]
         public IActionResult AgregarDocumento(DocumentoViewModel d)
         {
-            return View(d);
+            try
+            {
+                DocumentosRepository repos = new DocumentosRepository();
+                Regex regex = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$");
+                bool resultado = regex.IsMatch(d.Nombre);
+
+                if (repos.GetDocumentoByNombre(d.Nombre) != null)
+                {
+                    ModelState.AddModelError("", "Ya existe un documento con este nombre");
+                    return View(d);
+                }
+                if (!resultado)
+                {
+                    ModelState.AddModelError("", "El nombre del documento no puede y caracteres especiales.");
+                    return View(d);
+                }
+                repos.Insert(d);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(d);
+            }
         }
 
-        [Route("Administrador/EditarDocumento/{id}")]
+        [Route("Administrador/EditarDocumento/{id}")] 
         public IActionResult EditarDocumento(int id)
         {
             DocumentosRepository repos = new DocumentosRepository();
-            var d = repos.DocumentoById(id);
+            var d = repos.GetDocumentoById(id);
             if (d == null)
             {
                 return RedirectToAction("Index");
@@ -52,9 +81,39 @@ namespace SIMAS.Areas.Administrador.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar (DocumentoViewModel d)
+        public IActionResult EditarDocumento(DocumentoViewModel d)
         {
-            return View(d);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    DocumentosRepository repos = new DocumentosRepository();
+                    Regex regex = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]+$");
+                    bool resultado = regex.IsMatch(d.Nombre);
+
+                    if (repos.GetDocumentoByNombre(d.Nombre) != null)
+                    {
+                        ModelState.AddModelError("", "Ya existe un documento con este nombre");
+                        return View(d);
+                    }
+                    if (!resultado)
+                    {
+                        ModelState.AddModelError("", "El nombre del documento no puede y caracteres especiales.");
+                        return View(d);
+                    }
+                    repos.Update(d);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                    return View(d);
+                }
+            }
+            else
+            {
+                return View(d);
+            }
         }
 
         [HttpPost]

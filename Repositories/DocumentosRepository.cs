@@ -23,7 +23,7 @@ namespace SIMAS.Repositories
             return Context.Documento.FirstOrDefault(x => x.Nombre.ToUpper() == nombre.ToUpper());
         }
 
-        public DocumentoViewModel DocumentoById(int Id)
+        public DocumentoViewModel GetDocumentoById(int Id)
         {
             return Context.Documento.Where(x => x.IdDocumento == Id)
                 .Select(x => new DocumentoViewModel
@@ -48,10 +48,22 @@ namespace SIMAS.Repositories
             return Context.Documento.Include(x => x.IdSubCategoriaNavigation).Where(x => x.IdSubCategoriaNavigation.Nombre == subcategoria);
         }
 
+        public IEnumerable<Documento> GetDocumentoConNavigationCategoria()
+        {
+            return Context.Documento.Include(x => x.IdCategoriaNavigation);
+        }
+
+        public IEnumerable<Documento> GetDocumentoConNavigationSubcategoria()
+        {
+            return Context.Documento.Include(x => x.IdSubCategoriaNavigation);
+        }
+
+
         public void Insert(DocumentoViewModel vm)
         {
             Documento d = new Documento
             {
+                IdDocumento = vm.IdDocumento,
                 Nombre = vm.Nombre,
                 IdCategoria = vm.IdCategoria,
                 IdSubCategoria = vm.IdSubCategoria
@@ -65,9 +77,11 @@ namespace SIMAS.Repositories
             var d = Context.Documento.FirstOrDefault(x => x.IdDocumento == vm.IdDocumento);
             if (d != null)
             {
+                d.IdDocumento = vm.IdDocumento;
                 d.Nombre = vm.Nombre;
                 d.IdCategoria = vm.IdCategoria;
                 d.IdSubCategoria = vm.IdSubCategoria;
+                Update(d);
             }
         }
 

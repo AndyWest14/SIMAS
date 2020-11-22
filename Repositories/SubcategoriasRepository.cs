@@ -51,7 +51,6 @@ namespace SIMAS.Repositories
         {
             Subcategorias subcategorias = new Subcategorias
             {
-                Idsubcategorias = vm.Id,
                 Nombre = vm.Nombre,
                 IdCategoria = vm.IdCategoria
             };
@@ -67,6 +66,7 @@ namespace SIMAS.Repositories
                 s.Idsubcategorias = vm.Id;
                 s.Nombre = vm.Nombre;
                 s.IdCategoria = vm.IdCategoria;
+                Update(s);
             }
         }
 

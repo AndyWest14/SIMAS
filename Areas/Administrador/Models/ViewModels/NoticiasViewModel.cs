@@ -34,8 +34,8 @@ namespace SIMAS.Areas.Administrador.Models
         [NotMapped]
         public IFormFile Foto { get; set; }
 
-        [NotMapped]
-        public List<IFormFile> Fotos { get; set; }
+        //[NotMapped]
+        //public List<IFormFile> Fotos { get; set; }
     }
 }
 
