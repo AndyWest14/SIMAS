@@ -4,6 +4,8 @@
 }
 
 <link rel="stylesheet" href="~/css/agregar.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 <div class="card mb-3" id="card-admin" style="margin-top: 10%;">
     <div class="card-header">
@@ -38,31 +40,29 @@
                 <textarea class="form-control" asp-for="Cuerpo" name="Cuerpo" id="desc" rows="10" style="resize: none;  overflow-y: auto;"></textarea>
             </div>
 
-
-            <div class="input-group mb-3">
-                <div class="custom-file">
-                    <input type="file" asp-for="Foto" name="Foto" accept="image/jpeg" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Subir foto principal</label>
-                    <small id="name" class="form-text text-muted">(formato .jpg)</small>
-                </div> 
+            <div class="input-group" style="margin-bottom: 2%;">
+                <input type="file" asp-for="Foto" name="Foto" accept="image/jpeg" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Subir foto principal</label>
+                <small id="name" class="form-text text-muted">(formato .jpg)</small>
             </div>
 
 
-            @*<div class="input-group" style="margin-bottom: 4%;">
-                    <input type="file" class="custom-file-input" id="inputGroupFile04" multiple>
-                    <label class="custom-file-label" for="inputGroupFile04">Subir galería de fotos</label>
-                    <small id="name" class="form-text text-muted">(formato .jpg)</small>
-                </div>*@
+            <div class="input-group" style="margin-bottom: 4%;">
+                <input type="file" asp-for="Fotos" name="Fotos" lang="es" accept="image/jpeg" class="custom-file-input" id="inputGroupFile04" multiple>
+                <label class="custom-file-label" id="seleccionar-archivos" for="inputGroupFile04">Subir galería de fotos</label>
+                <small id="name" class="form-text text-muted">(formato .jpg)</small>
+            </div>
+
 
             <label for="basic-url">Video de la noticia el enlace debe ser de YouTube.com</label>
-            <div class="input-group mb-3"> 
+            <div class="input-group mb-3">
                 <input type="url" asp-for="VideoURL" name="VideoURL" class="form-control" id="basic-url" title="El video tiene que ser de Youtube." pattern=".+(youtube.com).+" aria-describedby="basic-addon3">
             </div>
 
             @Html.ValidationSummary()
 
 
-            <input type="submit" class="btn btn-primary" value="Editar" />
+            <input type="submit" class="btn btn-primary" value="Agregar">
             <a class="btn btn-primary" href="~/Administrador/Noticias">Cancelar</a>
         </form>
     </div>
@@ -74,5 +74,15 @@
             nextSibling.innerText = fileName
         });
     </script>
-</div>
 
+    <script>
+        $("#inputGroupFile04").change(function () {
+            $("#seleccionar-archivos").text(this.files.length + " archivos cargados");
+        });
+
+        $("#seleccionar-archivos").click(function () {
+            $("#files").click();
+        });
+    </script>
+
+</div>

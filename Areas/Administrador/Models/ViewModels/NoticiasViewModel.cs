@@ -16,7 +16,8 @@ namespace SIMAS.Areas.Administrador.Models
         [MaxLength(100, ErrorMessage = "El Titulo de la noticia no debe sobrepasar los 100 caracteres")]
         public string Encabezado { get; set; }
 
-        [Required(ErrorMessage = "La Fecha de la noticia es obligatoria")]
+       
+        [Required(ErrorMessage = "La Fecha de la noticia es obligatoria")] 
         public DateTime Fecha { get; set; }
 
         [MaxLength(45, ErrorMessage = "El autor de la noticia no debe sobrepasar los 45 caracteres")]
@@ -34,8 +35,8 @@ namespace SIMAS.Areas.Administrador.Models
         [NotMapped]
         public IFormFile Foto { get; set; }
 
-        //[NotMapped]
-        //public List<IFormFile> Fotos { get; set; }
+        [NotMapped]
+        public List<IFormFile> Fotos { get; set; }
     }
 }
 

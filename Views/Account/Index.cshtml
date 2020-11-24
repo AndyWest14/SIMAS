@@ -1,8 +1,10 @@
 ﻿
 @{
-
-    Layout = "_LayoutAccount.cshtml";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
+
+
+<link rel="stylesheet" href="~/css/login.css">
 
 <section>
     <div class="wrapper">
@@ -13,7 +15,7 @@
                 <label>Usuario</label>
             </div>
             <div class="field">
-                <input type="password" required oninvalid="InvalidPass(this);" oninput="InvalidPass(this);" required="required"
+                <input type="password" required oninvalid="InvalidPass(this);" oninput="InvalidPass(this);"
                        data-toggle="tooltip" data-placement="top" title="Ingresa la contraseña">
                 <label>Contraseña</label>
             </div>

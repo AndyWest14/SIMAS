@@ -4,6 +4,7 @@
 }
 
 <link rel="stylesheet" href="~/css/agregar.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
 <div class="card mb-3" id="card-admin" style="margin-top: 10%;">
@@ -24,8 +25,9 @@
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Seleccione una fecha</label>
-                <input class="form-control" asp-for="Fecha" name="Fecha" type="date">
+                <input class="form-control" id="datepicker" asp-for="Fecha" name="Fecha" type="date">
             </div>
+
 
             <div class="form-group">
                 <label for="desc">Escriba una breve descripción</label>
@@ -38,20 +40,18 @@
             </div>
 
 
-            <div class="input-group mb-3">
-                <div class="custom-file">
-                    <input type="file" asp-for="Foto" name="Foto" accept="image/jpeg" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Subir foto principal</label>
-                    <small id="name" class="form-text text-muted">(formato .jpg)</small>
-                </div>
+            <div class="input-group" style="margin-bottom: 2%;">
+                <input type="file" asp-for="Foto" name="Foto" accept="image/jpeg" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Subir foto principal</label>
+                <small id="name" class="form-text text-muted">(formato .jpg)</small>
             </div>
 
 
-            @*<div class="input-group" style="margin-bottom: 4%;">
-                    <input type="file" asp-for="Fotos" name="Fotos" lang="es" class="custom-file-input" id="inputGroupFile04" multiple>
-                    <label class="custom-file-label" for="inputGroupFile04">Subir galería de fotos</label>
-                    <small id="name" class="form-text text-muted">(formato .jpg)</small>
-                </div>*@
+            <div class="input-group" style="margin-bottom: 4%;">
+                <input type="file" asp-for="Fotos" name="Fotos" lang="es" accept="image/jpeg" class="custom-file-input" id="inputGroupFile04" multiple>
+                <label class="custom-file-label"  id="seleccionar-archivos" for="inputGroupFile04">Subir galería de fotos</label>
+                <small id="name" class="form-text text-muted">(formato .jpg)</small>
+            </div>
 
             <label for="basic-url">Video de la noticia el enlace debe ser de YouTube.com</label>
             <div class="input-group mb-3">
@@ -73,4 +73,15 @@
             nextSibling.innerText = fileName
         });
     </script>
+
+    <script>
+        $("#inputGroupFile04").change(function () {
+            $("#seleccionar-archivos").text(this.files.length + " archivos cargados");
+        });
+
+        $("#seleccionar-archivos").click(function () {
+            $("#files").click();
+        });
+    </script>
+
 </div>
