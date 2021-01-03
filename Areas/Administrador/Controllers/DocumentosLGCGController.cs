@@ -22,8 +22,7 @@ namespace SIMAS.Areas.Administrador.Controllers
         public IActionResult Index()
         {
             DocumentosRepository repos = new DocumentosRepository();
-            var documentosIEnumerable = repos.GetDocumentoConNavigationCategoria();
-            //var documentoIEnumerable = repos.GetDocumentoConNavigationSubcategoria();
+            var documentosIEnumerable = repos.GetDocumentoConNavigationCategoriaSubcategoria();
             return View(documentosIEnumerable);
         }
 
@@ -32,8 +31,6 @@ namespace SIMAS.Areas.Administrador.Controllers
         public IActionResult AgregarDocumento()
         {
             return View();
-
-
         }
 
         [HttpPost]

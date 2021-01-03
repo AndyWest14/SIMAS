@@ -48,16 +48,10 @@ namespace SIMAS.Repositories
             return Context.Documento.Include(x => x.IdSubCategoriaNavigation).Where(x => x.IdSubCategoriaNavigation.Nombre == subcategoria);
         }
 
-        public IEnumerable<Documento> GetDocumentoConNavigationCategoria()
+        public IEnumerable<Documento> GetDocumentoConNavigationCategoriaSubcategoria()
         {
-            return Context.Documento.Include(x => x.IdCategoriaNavigation);
+            return Context.Documento.Include(x => x.IdCategoriaNavigation).Include(x => x.IdSubCategoriaNavigation);
         }
-
-        public IEnumerable<Documento> GetDocumentoConNavigationSubcategoria()
-        {
-            return Context.Documento.Include(x => x.IdSubCategoriaNavigation);
-        }
-
 
         public void Insert(DocumentoViewModel vm)
         {

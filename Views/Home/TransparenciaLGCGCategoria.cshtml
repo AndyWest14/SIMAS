@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SIMAS.Models.Categorias>
+﻿@model IEnumerable<SIMAS.Models.Subcategorias>
 @{
     Layout = "_Layout";
 }
@@ -22,7 +22,7 @@
 
                 @foreach (var item in Model)
                 {
-                   <li><a href="~/TransparenciaLGCGArchivos/@item.IdCategoria">@item.Nombre</a></li>
+                   <li><a href="~/TransparenciaLGCGArchivos/@item.Idsubcategorias">@item.Nombre</a></li>
                 }
             </ul>
         </div>
